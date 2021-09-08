@@ -1,0 +1,183 @@
+package me.dkits.Utils;
+
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import java.util.HashMap;
+import org.bukkit.command.CommandExecutor;
+
+public class ClearInvAndChat implements CommandExecutor
+{
+    public static HashMap<Player, Boolean> construir;
+    
+    static {
+        ClearInvAndChat.construir = new HashMap<Player, Boolean>();
+    }
+    
+    public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
+        final Player p = (Player)sender;
+        if (cmd.getName().equalsIgnoreCase("clear")) {
+            if (args.length < 1) {
+                p.getInventory().clear();
+                p.sendMessage("§cInventario Limpo! \n §7Para limpar o chat use: §9/clear chat");
+                return true;
+            }
+            if (args[0].equalsIgnoreCase("chat") && p.hasPermission("dkits.chat")) {
+                ClearInvAndChat.construir.put(p, true);
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("\n");
+                Bukkit.broadcastMessage("§7Chat limpo por " + p.getDisplayName());
+                return true;
+            }
+        }
+        return false;
+    }
+}

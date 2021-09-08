@@ -1,0 +1,55 @@
+package me.dkits.Jumps;
+
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.EventHandler;
+import org.bukkit.util.Vector;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
+import org.bukkit.Effect;
+import org.bukkit.Sound;
+import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
+import org.bukkit.event.player.PlayerMoveEvent;
+import java.util.ArrayList;
+import me.dkits.Main;
+import org.bukkit.event.Listener;
+
+public class Diamante implements Listener
+{
+    public static Main plugin;
+    public static ArrayList<String> Diamante;
+    
+    static {
+        me.dkits.Jumps.Diamante.Diamante = new ArrayList<String>();
+    }
+    
+    public Diamante(final Main main) {
+        me.dkits.Jumps.Diamante.plugin = main;
+    }
+    
+    @EventHandler(priority = EventPriority.MONITOR)
+    public void onPlayerJump1(final PlayerMoveEvent e) {
+        final Player p = e.getPlayer();
+        if (e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.DIAMOND_BLOCK) {
+            me.dkits.Jumps.Diamante.Diamante.remove(p.getName());
+            final Location loc = e.getTo().getBlock().getLocation();
+            final Vector sponge = p.getLocation().getDirection().multiply(0).setY(1);
+            p.setVelocity(sponge);
+            p.playSound(loc, Sound.ARROW_HIT, 6.0f, 1.0f);
+            p.playEffect(loc, Effect.ENDER_SIGNAL, (Object)null);
+            me.dkits.Jumps.Diamante.Diamante.add(p.getName());
+        }
+    }
+    
+    @EventHandler
+    public void onFall(final EntityDamageEvent e) {
+        if (e.getEntity() instanceof Player) {
+            final Player p = (Player)e.getEntity();
+            if (e.getCause().equals((Object)EntityDamageEvent.DamageCause.FALL) && me.dkits.Jumps.Diamante.Diamante.contains(p.getName())) {
+                e.setCancelled(true);
+                me.dkits.Jumps.Diamante.Diamante.remove(p.getName());
+            }
+        }
+    }
+}

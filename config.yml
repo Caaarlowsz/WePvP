@@ -1,0 +1,35 @@
+###########################################
+#      Configura√ßao do plugin DKits.     #
+#      Dependencias: Vault e BarAPI       #      
+# Desenvolvido por DevilGamer_ e BrunoDev #
+###########################################
+
+#Essa versao È a gratuita! Algumas funÁıes n„o estao disponiveis nela!
+
+##Precisa de key para o servidor iniciar! *Key esta na descri√Áao do video!
+KEY: 0.0
+
+##Mensagem de Motd || Use {linha2} para passar para a segunda linha!
+Motd: '&6Mensagem MOTD {linha2}&cEditavel na config!'
+
+##Mensagem de Kick
+MSG_Kick: '&6Voce foi kikado do servidor! {linha2} &cRelogue!'
+
+##Mensagem de Manuten√ßao
+MSG_Manutencao: '&7Estamos em &cMANUTENCAO! {linha2}&5Ja voltamos!'
+
+##Mensagem de BAN
+MSG_Ban: '&7Voce foi &cBANIDO {linha2}&6Compre desban na loja! {linha2}&9www.teste.com.br'
+
+##Mensagem de bem-vindo (BarAPI) Use {player} para pegar o nome do player
+BemVindo_Bar: '&6Bem-Vindo &7{player}&6 ao DKits'
+
+##Mensagem de join | Use {player} para pegar o nome do player
+MSG_Join: '&7[&a+&7] &9{player}.'
+
+##Mensagem de quit | Use {player} para pegar o nome do player
+MSG_Quit: '&7[&c-&7] &9{player}.'
+
+##Mensagem de morte | Use {player} para pegar o nome do player
+MSG_Death: '&c{player} &se matou'
+
