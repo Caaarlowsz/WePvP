@@ -1,5 +1,4 @@
 package me.dkits.Kits;
 
-public class Transfer
-{
+public class Transfer {
 }

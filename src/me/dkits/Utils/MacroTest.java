@@ -1,5 +1,4 @@
 package me.dkits.Utils;
 
-public class MacroTest
-{
+public class MacroTest {
 }
