@@ -7,12 +7,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class Gm implements CommandExecutor {
-	Main main;
+	WePvP main;
 
-	public Gm(Main plugin) {
+	public Gm(WePvP plugin) {
 		plugin = this.main;
 	}
 
@@ -21,18 +21,18 @@ public class Gm implements CommandExecutor {
 		final Player player = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("gm") && sender.hasPermission("we.gm")) {
 			if (args.length != 1) {
-				player.sendMessage(ChatColor.RED + "§cUSE: §f/gm 1 §aou §f/gm 0");
+				player.sendMessage(ChatColor.RED + "ï¿½cUSE: ï¿½f/gm 1 ï¿½aou ï¿½f/gm 0");
 				return true;
 			}
 			if (args.length == 1) {
 				if (args[0].equalsIgnoreCase("0")) {
 					player.setGameMode(GameMode.SURVIVAL);
 					player.sendMessage(
-							"§b[" + player.getName() + "§b]" + "§f O seu gamemode agora \u00e9: §aSobreviv\u00eancia");
+							"ï¿½b[" + player.getName() + "ï¿½b]" + "ï¿½f O seu gamemode agora \u00e9: ï¿½aSobreviv\u00eancia");
 				}
 				if (args[0].equalsIgnoreCase("1")) {
 					player.setGameMode(GameMode.CREATIVE);
-					player.sendMessage("§b[" + player.getName() + "§b]" + "§f O seu gamemode agora \u00e9: §4Criativo");
+					player.sendMessage("ï¿½b[" + player.getName() + "ï¿½b]" + "ï¿½f O seu gamemode agora \u00e9: ï¿½4Criativo");
 				}
 				return true;
 			}

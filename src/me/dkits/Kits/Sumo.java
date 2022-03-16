@@ -26,7 +26,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Sumo implements Listener, CommandExecutor {
@@ -42,7 +42,7 @@ public class Sumo implements Listener, CommandExecutor {
 		Sumo.sumo = new ArrayList<Player>();
 	}
 
-	public Sumo(final Main plugin) {
+	public Sumo(final WePvP plugin) {
 		this.Cima = new ArrayList<String>();
 		this.tempo = new ArrayList<String>();
 		this.remover = new ArrayList<Block>();
@@ -54,7 +54,7 @@ public class Sumo implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("sumo")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.sumo")) {
-					p.sendMessage("§7Voce escolheu » §cSumo");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cSumo");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					Sumo.sumo.add(p);
 					KitManager.usandokit.add(p.getName());
@@ -62,16 +62,16 @@ public class Sumo implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
 					p.getInventory().addItem(new ItemStack[] { new ItemStack(Material.APPLE) });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lSumo", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lSumo", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 34);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							this.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							this.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
@@ -132,7 +132,7 @@ public class Sumo implements Listener, CommandExecutor {
 					}
 				}
 			} else {
-				p.sendMessage("§cAguarde mais um pouco para usar sua habilidade !");
+				p.sendMessage("ï¿½cAguarde mais um pouco para usar sua habilidade !");
 			}
 		}
 	}

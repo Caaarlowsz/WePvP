@@ -28,15 +28,15 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Gladiator implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public ArrayList<String> inPvP;
 	public Map<String, Location> local;
 
-	public Gladiator(final Main main) {
+	public Gladiator(final WePvP main) {
 		this.inPvP = new ArrayList<String>();
 		this.local = new HashMap<String, Location>();
 		Gladiator.plugin = main;
@@ -98,10 +98,10 @@ public class Gladiator implements Listener, CommandExecutor {
 		}
 		gladiator.teleport(loc.clone().add((double) (x - 1), (double) (y - 2), -4.0));
 		gladiator.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 6));
-		BarAPI.setMessage(gladiator, "§6Voce esta em 1v1 com §c" + target.getName() + " §6Boa Sorte!", 3);
+		BarAPI.setMessage(gladiator, "ï¿½6Voce esta em 1v1 com ï¿½c" + target.getName() + " ï¿½6Boa Sorte!", 3);
 		target.teleport(loc.clone().add(-4.0, (double) (y - 4), (double) (z - 1)));
 		target.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 120, 6));
-		BarAPI.setMessage(target, "§6Voce esta em 1v1 com §c" + gladiator.getName() + " §6Boa Sorte!", 3);
+		BarAPI.setMessage(target, "ï¿½6Voce esta em 1v1 com ï¿½c" + gladiator.getName() + " ï¿½6Boa Sorte!", 3);
 	}
 
 	@EventHandler
@@ -194,7 +194,7 @@ public class Gladiator implements Listener, CommandExecutor {
 					}
 				}.runTaskTimer((Plugin) Gladiator.plugin, 0L, 20L);
 			} else {
-				BarAPI.setMessage(player, "§cAguarde acabar este combate", 1);
+				BarAPI.setMessage(player, "ï¿½cAguarde acabar este combate", 1);
 			}
 		}
 	}
@@ -220,26 +220,26 @@ public class Gladiator implements Listener, CommandExecutor {
 		p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 		final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta espadameta = espada.getItemMeta();
-		espadameta.setDisplayName("§cSword");
+		espadameta.setDisplayName("ï¿½cSword");
 		espada.addEnchantment(Enchantment.DURABILITY, 3);
 		p.getInventory().addItem(new ItemStack[] { espada });
 		final ItemStack gladiator = new ItemStack(Material.IRON_FENCE);
 		final ItemMeta gladiatora = gladiator.getItemMeta();
-		gladiatora.setDisplayName("§4Gladiator Arena");
+		gladiatora.setDisplayName("ï¿½4Gladiator Arena");
 		gladiator.setItemMeta(gladiatora);
 		if (cmd.equalsIgnoreCase("gladiator")) {
 			if (KitManager.usandokit.contains(p.getName())) {
-				BarAPI.setMessage(p, "§cVoce ja esta usando um kit!", 5);
+				BarAPI.setMessage(p, "ï¿½cVoce ja esta usando um kit!", 5);
 				return true;
 			}
 			if (!p.hasPermission("kit.gladiator")) {
-				BarAPI.setMessage(p, "§c§oSem Permiss\u00e3o!", 10);
+				BarAPI.setMessage(p, "ï¿½cï¿½oSem Permiss\u00e3o!", 10);
 				return true;
 			}
 			KitManager.usandokit.add(p.getName());
 			KitManager.gladiator.add(p.getName());
-			p.sendMessage("§7Voce escolheu » §cGladiator");
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lGladiator", 10);
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cGladiator");
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lGladiator", 10);
 			p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().setArmorContents((ItemStack[]) null);

@@ -14,12 +14,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Achilles implements Listener, CommandExecutor {
 
-	public Achilles(final Main plugin) {
+	public Achilles(final WePvP plugin) {
 	}
 
 	@EventHandler
@@ -32,16 +32,16 @@ public class Achilles implements Listener, CommandExecutor {
 				e.setDamage(19.0);
 			} else if (item.getType().equals((Object) Material.STONE_SWORD)) {
 				e.setDamage(1.0);
-				d.sendMessage("§cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
+				d.sendMessage("ï¿½cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
 			} else if (item.getType().equals((Object) Material.IRON_SWORD)) {
 				e.setDamage(1.0);
-				d.sendMessage("§cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
+				d.sendMessage("ï¿½cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
 			} else if (item.getType().equals((Object) Material.GOLD_SWORD)) {
 				e.setDamage(1.0);
-				d.sendMessage("§cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
+				d.sendMessage("ï¿½cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
 			} else if (item.getType().equals((Object) Material.DIAMOND_SWORD)) {
 				e.setDamage(1.0);
-				d.sendMessage("§cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
+				d.sendMessage("ï¿½cVoce esta lutando contra um Achilles, De /espada para pegar uma espada de madeira!");
 			}
 		}
 	}
@@ -50,7 +50,7 @@ public class Achilles implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("achilles") && !KitManager.usandokit.contains(p.getName())
 				&& p.hasPermission("kit.achilles")) {
-			p.sendMessage("§7Voce escolheu » §cAchilles");
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cAchilles");
 			p.playSound(p.getLocation(), Sound.ANVIL_LAND, 4.0f, 4.0f);
 			p.getInventory().clear();
 			KitManager.usandokit.add(p.getName());
@@ -58,10 +58,10 @@ public class Achilles implements Listener, CommandExecutor {
 			p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 			final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 			final ItemMeta espadameta = espada.getItemMeta();
-			espadameta.setDisplayName("§cSword");
+			espadameta.setDisplayName("ï¿½cSword");
 			espada.addEnchantment(Enchantment.DURABILITY, 3);
 			p.getInventory().addItem(new ItemStack[] { espada });
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lAchilles", 10);
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lAchilles", 10);
 			KitManager.giveA(p);
 			KitManager.giveSoup(p, 35);
 			p.getInventory().addItem(new ItemStack[] { espada });

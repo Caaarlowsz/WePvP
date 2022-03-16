@@ -17,13 +17,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class WeakHand implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public WeakHand(final Main main) {
+	public WeakHand(final WePvP main) {
 		WeakHand.plugin = main;
 	}
 
@@ -31,7 +31,7 @@ public class WeakHand implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("weakhand")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.weakhand")) {
-				p.sendMessage("§7Voce escolheu » §cWeakhand");
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cWeakhand");
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.weakhand.add(sender.getName());
@@ -39,10 +39,10 @@ public class WeakHand implements Listener, CommandExecutor {
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cSword");
+				espadameta.setDisplayName("ï¿½cSword");
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().addItem(new ItemStack[] { espada });
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lWeakhand", 10);
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lWeakhand", 10);
 				KitManager.giveA(p);
 				KitManager.giveSoup(p, 35);
 			}

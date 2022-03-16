@@ -15,13 +15,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Viking implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Viking(final Main main) {
+	public Viking(final WePvP main) {
 		Viking.plugin = main;
 	}
 
@@ -30,22 +30,22 @@ public class Viking implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("viking")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.viking")) {
-					p.sendMessage("§7Voce escolheu » §cViking");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cViking");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.viking.add(sender.getName());
 					p.getInventory().clear();
 					final ItemStack espada = new ItemStack(Material.STONE_AXE);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cViking Axe");
+					espadameta.setDisplayName("ï¿½cViking Axe");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lViking", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lViking", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 35);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Viking.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							Viking.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',

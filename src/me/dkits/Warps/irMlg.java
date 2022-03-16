@@ -15,12 +15,12 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class irMlg implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public irMlg(final Main main) {
+	public irMlg(final WePvP main) {
 		irMlg.plugin = main;
 	}
 
@@ -72,7 +72,7 @@ public class irMlg implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage("§7Teleportado!");
+					p.sendMessage("ï¿½7Teleportado!");
 					p.setHealthScale(20.0);
 					for (final PotionEffect effect : p.getActivePotionEffects()) {
 						p.getInventory().setBoots((ItemStack) null);

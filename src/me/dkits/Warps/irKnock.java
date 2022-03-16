@@ -17,13 +17,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class irKnock implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public irKnock(final Main main) {
+	public irKnock(final WePvP main) {
 		irKnock.plugin = main;
 	}
 
@@ -75,12 +75,12 @@ public class irKnock implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage("§7Teleportado!");
+					p.sendMessage("ï¿½7Teleportado!");
 					p.setHealthScale(20.0);
 					for (final PotionEffect effect : p.getActivePotionEffects()) {
 						final ItemStack espada = new ItemStack(Material.STICK);
 						final ItemMeta espadameta = espada.getItemMeta();
-						espadameta.setDisplayName("§6KNOCK!");
+						espadameta.setDisplayName("ï¿½6KNOCK!");
 						espada.addUnsafeEnchantment(Enchantment.KNOCKBACK, 2);
 						p.getInventory().setItem(0, espada);
 						p.setFireTicks(0);

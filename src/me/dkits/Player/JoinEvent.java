@@ -15,7 +15,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 import me.dkits.Kits.Andromeda;
 import me.dkits.Kits.Bazooka;
@@ -38,12 +38,12 @@ import me.dkits.Utils.PlayerManager;
 
 public class JoinEvent implements Listener, CommandExecutor {
 	public PlayerManager pm;
-	public static Main plugin;
+	public static WePvP plugin;
 
 	static {
 	}
 
-	public JoinEvent(final Main instance) {
+	public JoinEvent(final WePvP instance) {
 		this.pm = PlayerManager.instance;
 		JoinEvent.plugin = instance;
 	}
@@ -63,7 +63,7 @@ public class JoinEvent implements Listener, CommandExecutor {
 			e.allow();
 		} else {
 			e.setKickMessage(
-					"§bServidor lotado, compre vip para entrar quando estiver cheio! §flojawepvp.buycraft.net");
+					"ï¿½bServidor lotado, compre vip para entrar quando estiver cheio! ï¿½flojawepvp.buycraft.net");
 		}
 	}
 
@@ -86,12 +86,12 @@ public class JoinEvent implements Listener, CommandExecutor {
 		p.sendMessage("");
 		p.sendMessage("");
 		p.sendMessage("");
-		p.sendMessage("§bBem-Vindo ao §fWePvP §4 - §1" + p.getName());
-		e.setJoinMessage("§9[§2+§9]§f " + p.getName());
+		p.sendMessage("ï¿½bBem-Vindo ao ï¿½fWePvP ï¿½4 - ï¿½1" + p.getName());
+		e.setJoinMessage("ï¿½9[ï¿½2+ï¿½9]ï¿½f " + p.getName());
 		p.sendMessage(
-				"§bOs Kits Novos: §fSayajin §4- §fInfected §4- §fMagma §4- §fAccumulator §4- §fDeshfire §4- §fSonic §4- §fTurbo");
-		p.sendMessage("§aJa est\u00e3o disponiveis com vip ou para compra na loja.");
-		p.sendMessage("§bwww.lojawepvp.buycraft.net");
+				"ï¿½bOs Kits Novos: ï¿½fSayajin ï¿½4- ï¿½fInfected ï¿½4- ï¿½fMagma ï¿½4- ï¿½fAccumulator ï¿½4- ï¿½fDeshfire ï¿½4- ï¿½fSonic ï¿½4- ï¿½fTurbo");
+		p.sendMessage("ï¿½aJa est\u00e3o disponiveis com vip ou para compra na loja.");
+		p.sendMessage("ï¿½bwww.lojawepvp.buycraft.net");
 		p.setHealth(20.0);
 		p.setFoodLevel(20);
 		p.setLevel(0);
@@ -136,10 +136,10 @@ public class JoinEvent implements Listener, CommandExecutor {
 			final Player player = (Player) sender;
 			if (args.length == 0 && sender.hasPermission("fly.use")) {
 				if (!player.getAllowFlight()) {
-					player.sendMessage(ChatColor.GRAY + "§7Fly §2Ativado");
+					player.sendMessage(ChatColor.GRAY + "ï¿½7Fly ï¿½2Ativado");
 					player.setAllowFlight(true);
 				} else {
-					player.sendMessage(ChatColor.GRAY + "§7Fly §4Desativado");
+					player.sendMessage(ChatColor.GRAY + "ï¿½7Fly ï¿½4Desativado");
 					player.setAllowFlight(false);
 				}
 			}

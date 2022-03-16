@@ -24,13 +24,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Sniper implements CommandExecutor, Listener {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Sniper(final Main main) {
+	public Sniper(final WePvP main) {
 		Sniper.plugin = main;
 	}
 
@@ -65,7 +65,7 @@ public class Sniper implements CommandExecutor, Listener {
 							@Override
 							public void run() {
 								if (KitManager.sniper.contains(p.getName())) {
-									p.sendMessage("§6RECARREGADO!!");
+									p.sendMessage("ï¿½6RECARREGADO!!");
 									KitManager.reload.remove(p.getName());
 								}
 							}
@@ -91,11 +91,11 @@ public class Sniper implements CommandExecutor, Listener {
 		final Player p = (Player) sender;
 		final ItemStack dima = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta souperaa = dima.getItemMeta();
-		souperaa.setDisplayName("§cSword");
+		souperaa.setDisplayName("ï¿½cSword");
 		dima.setItemMeta(souperaa);
 		final ItemStack sopaa = new ItemStack(Material.IRON_BARDING);
 		final ItemMeta sopasa = sopaa.getItemMeta();
-		sopasa.setDisplayName("§6Sniper m-927182");
+		sopasa.setDisplayName("ï¿½6Sniper m-927182");
 		sopaa.setItemMeta(sopasa);
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta sopas = sopa.getItemMeta();
@@ -104,17 +104,17 @@ public class Sniper implements CommandExecutor, Listener {
 		dima.addEnchantment(Enchantment.DURABILITY, 3);
 		if (cmd.equalsIgnoreCase("sniper")) {
 			if (KitManager.usandokit.contains(p.getName())) {
-				p.sendMessage("§cVoce ja esta usando um kit");
+				p.sendMessage("ï¿½cVoce ja esta usando um kit");
 				return true;
 			}
 			if (!p.hasPermission("kit.sniper")) {
-				p.sendMessage("§cVoce nao tem esse kit!");
+				p.sendMessage("ï¿½cVoce nao tem esse kit!");
 				return true;
 			}
 			KitManager.usandokit.add(p.getName());
 			KitManager.sniper.add(p.getName());
-			p.sendMessage("§7Voce escolheu » §cSniper");
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lSniper", 10);
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cSniper");
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lSniper", 10);
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().setArmorContents((ItemStack[]) null);
 			p.getInventory().clear();

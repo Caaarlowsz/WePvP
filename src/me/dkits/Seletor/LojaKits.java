@@ -19,84 +19,84 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class LojaKits implements Listener, CommandExecutor {
 	@EventHandler
 	public void InventoryClickEvent(final InventoryClickEvent e) {
 		final Player pi = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equalsIgnoreCase("§bLoja de Kits: §a" + pi.getName())
+		if (e.getInventory().getTitle().equalsIgnoreCase("ï¿½bLoja de Kits: ï¿½a" + pi.getName())
 				&& e.getCurrentItem() != null && e.getCurrentItem().getTypeId() != 0) {
 			e.setCancelled(true);
 			if (e.getRawSlot() == 10) {
-				if (!Main.permission.has(pi, "kit.avatar")) {
-					if (Main.economy.has(pi.getName(), 40000.0)) {
-						Main.economy.withdrawPlayer(pi.getName(), 40000.0);
-						Main.permission.playerAdd(pi, "kit.avatar");
-						pi.sendMessage("§cVoc\u00ea comprou o kit §fAvatar!");
+				if (!WePvP.permission.has(pi, "kit.avatar")) {
+					if (WePvP.economy.has(pi.getName(), 40000.0)) {
+						WePvP.economy.withdrawPlayer(pi.getName(), 40000.0);
+						WePvP.permission.playerAdd(pi, "kit.avatar");
+						pi.sendMessage("ï¿½cVoc\u00ea comprou o kit ï¿½fAvatar!");
 					}
 				} else {
-					pi.sendMessage("§cVoc\u00ea j\u00e1 tem este kit");
+					pi.sendMessage("ï¿½cVoc\u00ea j\u00e1 tem este kit");
 				}
 			} else if (e.getRawSlot() == 14) {
-				if (!Main.permission.has(pi, "kit.sumo")) {
-					if (Main.economy.has(pi.getName(), 30000.0)) {
-						Main.economy.withdrawPlayer(pi.getName(), 30000.0);
-						Main.permission.playerAdd(pi, "kit.sumo");
-						pi.sendMessage("§cVoc\u00ea comprou o kit §4Sumo!");
+				if (!WePvP.permission.has(pi, "kit.sumo")) {
+					if (WePvP.economy.has(pi.getName(), 30000.0)) {
+						WePvP.economy.withdrawPlayer(pi.getName(), 30000.0);
+						WePvP.permission.playerAdd(pi, "kit.sumo");
+						pi.sendMessage("ï¿½cVoc\u00ea comprou o kit ï¿½4Sumo!");
 					}
 				} else {
-					pi.sendMessage("§cVoc\u00ea j\u00e1 tem este kit");
+					pi.sendMessage("ï¿½cVoc\u00ea j\u00e1 tem este kit");
 				}
 			} else if (e.getRawSlot() == 15) {
-				if (!Main.permission.has(pi, "kit.weakhand")) {
-					if (Main.economy.has(pi.getName(), 20000.0)) {
-						Main.economy.withdrawPlayer(pi.getName(), 20000.0);
-						Main.permission.playerAdd(pi, "kit.weakhand");
-						pi.sendMessage("§cVoc\u00ea comprou o kit §9Weakhand!");
+				if (!WePvP.permission.has(pi, "kit.weakhand")) {
+					if (WePvP.economy.has(pi.getName(), 20000.0)) {
+						WePvP.economy.withdrawPlayer(pi.getName(), 20000.0);
+						WePvP.permission.playerAdd(pi, "kit.weakhand");
+						pi.sendMessage("ï¿½cVoc\u00ea comprou o kit ï¿½9Weakhand!");
 					}
 				} else {
-					pi.sendMessage("§cVoc\u00ea j\u00e1 tem este kit");
+					pi.sendMessage("ï¿½cVoc\u00ea j\u00e1 tem este kit");
 				}
 			} else if (e.getRawSlot() == 12) {
-				if (!Main.permission.has(pi, "kit.gladiator")) {
-					if (Main.economy.has(pi.getName(), 35000.0)) {
-						Main.economy.withdrawPlayer(pi.getName(), 35000.0);
-						Main.permission.playerAdd(pi, "kit.gladiator");
-						pi.sendMessage("§cVoc\u00ea comprou o kit §7Gladiator!");
+				if (!WePvP.permission.has(pi, "kit.gladiator")) {
+					if (WePvP.economy.has(pi.getName(), 35000.0)) {
+						WePvP.economy.withdrawPlayer(pi.getName(), 35000.0);
+						WePvP.permission.playerAdd(pi, "kit.gladiator");
+						pi.sendMessage("ï¿½cVoc\u00ea comprou o kit ï¿½7Gladiator!");
 					}
 				} else {
-					pi.sendMessage("§cVoc\u00ea j\u00e1 tem este kit");
+					pi.sendMessage("ï¿½cVoc\u00ea j\u00e1 tem este kit");
 				}
 			} else if (e.getRawSlot() == 16) {
-				if (!Main.permission.has(pi, "kit.naruto")) {
-					if (Main.economy.has(pi.getName(), 25000.0)) {
-						Main.economy.withdrawPlayer(pi.getName(), 25000.0);
-						Main.permission.playerAdd(pi, "kit.naruto");
-						pi.sendMessage("§cVoc\u00ea comprou o kit §aNaruto!");
+				if (!WePvP.permission.has(pi, "kit.naruto")) {
+					if (WePvP.economy.has(pi.getName(), 25000.0)) {
+						WePvP.economy.withdrawPlayer(pi.getName(), 25000.0);
+						WePvP.permission.playerAdd(pi, "kit.naruto");
+						pi.sendMessage("ï¿½cVoc\u00ea comprou o kit ï¿½aNaruto!");
 					}
 				} else {
-					pi.sendMessage("§cVoc\u00ea j\u00e1 tem este kit");
+					pi.sendMessage("ï¿½cVoc\u00ea j\u00e1 tem este kit");
 				}
 			} else if (e.getRawSlot() == 13) {
-				if (!Main.permission.has(pi, "kit.endermage")) {
-					if (Main.economy.has(pi.getName(), 10000.0)) {
-						Main.economy.withdrawPlayer(pi.getName(), 10000.0);
-						Main.permission.playerAdd(pi, "kit.endermage");
-						pi.sendMessage("§cVoc\u00ea comprou o kit §8Endermage!");
+				if (!WePvP.permission.has(pi, "kit.endermage")) {
+					if (WePvP.economy.has(pi.getName(), 10000.0)) {
+						WePvP.economy.withdrawPlayer(pi.getName(), 10000.0);
+						WePvP.permission.playerAdd(pi, "kit.endermage");
+						pi.sendMessage("ï¿½cVoc\u00ea comprou o kit ï¿½8Endermage!");
 					}
 				} else {
-					pi.sendMessage("§cVoc\u00ea j\u00e1 tem este kit");
+					pi.sendMessage("ï¿½cVoc\u00ea j\u00e1 tem este kit");
 				}
 			} else if (e.getRawSlot() == 11) {
-				if (!Main.permission.has(pi, "kit.urgal")) {
-					if (Main.economy.has(pi.getName(), 60000.0)) {
-						Main.economy.withdrawPlayer(pi.getName(), 60000.0);
-						Main.permission.playerAdd(pi, "kit.urgal");
-						pi.sendMessage("§cVoc\u00ea comprou o kit §2Urgal!");
+				if (!WePvP.permission.has(pi, "kit.urgal")) {
+					if (WePvP.economy.has(pi.getName(), 60000.0)) {
+						WePvP.economy.withdrawPlayer(pi.getName(), 60000.0);
+						WePvP.permission.playerAdd(pi, "kit.urgal");
+						pi.sendMessage("ï¿½cVoc\u00ea comprou o kit ï¿½2Urgal!");
 					}
 				} else {
-					pi.sendMessage("§cVoc\u00ea j\u00e1 tem este kit");
+					pi.sendMessage("ï¿½cVoc\u00ea j\u00e1 tem este kit");
 				}
 			}
 		}
@@ -154,26 +154,26 @@ public class LojaKits implements Listener, CommandExecutor {
 		gladiator.setItemMeta(thormeta);
 		final ItemStack e = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);
 		final ItemMeta endermetad = e.getItemMeta();
-		endermetad.setDisplayName("§bWePvP §4- §fBom Jogo".replace("&", "§"));
+		endermetad.setDisplayName("ï¿½bWePvP ï¿½4- ï¿½fBom Jogo".replace("&", "ï¿½"));
 		e.setItemMeta(endermetad);
 		final ItemStack ed = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 12);
 		final ItemMeta edmeta = e.getItemMeta();
-		edmeta.setDisplayName("§bWePvP §4- §fBom Jogo");
+		edmeta.setDisplayName("ï¿½bWePvP ï¿½4- ï¿½fBom Jogo");
 		ed.setItemMeta(edmeta);
 		final ItemStack es = new ItemStack(Material.MUSHROOM_SOUP);
 		final ItemMeta endermetads = es.getItemMeta();
-		endermetads.setDisplayName("§fWePvP §4- §bLoja de Kits");
+		endermetads.setDisplayName("ï¿½fWePvP ï¿½4- ï¿½bLoja de Kits");
 		es.setItemMeta(endermetads);
 		final ItemStack ender = new ItemStack(Material.DIAMOND_BLOCK);
 		final ItemMeta endermeta = ender.getItemMeta();
-		endermeta.setDisplayName("§fWePvP §4- §bLoja de Kits");
+		endermeta.setDisplayName("ï¿½fWePvP ï¿½4- ï¿½bLoja de Kits");
 		ender.setItemMeta(endermeta);
 		final ItemStack D = new ItemStack(Material.GOLD_BLOCK);
 		final ItemMeta Di = D.getItemMeta();
-		Di.setDisplayName("§aDinheiro: §f" + Main.economy.getBalance(p.getName()) + " R$");
+		Di.setDisplayName("ï¿½aDinheiro: ï¿½f" + WePvP.economy.getBalance(p.getName()) + " R$");
 		D.setItemMeta(Di);
 		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 36,
-				"§bLoja de Kits: §a" + p.getName());
+				"ï¿½bLoja de Kits: ï¿½a" + p.getName());
 		inv.setItem(0, ender);
 		inv.setItem(1, ed);
 		inv.setItem(2, e);

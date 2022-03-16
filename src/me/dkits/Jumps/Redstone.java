@@ -15,17 +15,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class Redstone implements Listener {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static ArrayList<String> RedStone;
 
 	static {
 		Redstone.RedStone = new ArrayList<String>();
 	}
 
-	public Redstone(final Main main) {
+	public Redstone(final WePvP main) {
 		Redstone.plugin = main;
 	}
 

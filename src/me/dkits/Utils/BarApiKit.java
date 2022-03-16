@@ -8,13 +8,13 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.plugin.Plugin;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class BarApiKit implements Listener {
-	public Main plugin;
+	public WePvP plugin;
 
-	public void BarKit(final Main instance) {
+	public void BarKit(final WePvP instance) {
 		this.plugin = instance;
 	}
 
@@ -29,7 +29,7 @@ public class BarApiKit implements Listener {
 		final Player t = (Player) e.getEntity();
 		final Player p = (Player) e.getDamager();
 		if (KitManager.pvp.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cPvP");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cPvP");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -39,7 +39,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.archer.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cArcher");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cArcher");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -49,7 +49,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.specialist.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSpecialist");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSpecialist");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -59,7 +59,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.bazooka.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cBazooka");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cBazooka");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -69,7 +69,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.morf.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cMorf");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cMorf");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -79,7 +79,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.doctor.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cDoctor");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cDoctor");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -89,7 +89,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.anchor.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cAnchor");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cAnchor");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -99,7 +99,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.endermage.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cEndermage");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cEndermage");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -109,7 +109,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.fireman.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cFireman");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cFireman");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -119,7 +119,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.flash.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cflash");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cflash");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -129,7 +129,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.grandpa.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cGrandpa");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cGrandpa");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -139,7 +139,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.kangaroo.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cKangaroo");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cKangaroo");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -149,7 +149,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.morf.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cMorf");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cMorf");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -159,7 +159,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.paladino.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cPaladino");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cPaladino");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -169,7 +169,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.phantom.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cPhantom");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cPhantom");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -179,7 +179,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.pulapula.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cPula Pula");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cPula Pula");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -189,7 +189,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.ryu.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cRyu");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cRyu");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -199,7 +199,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.skeleton.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSkeleton");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSkeleton");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -209,7 +209,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.sniper.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSniper");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSniper");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -219,7 +219,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.stoneman.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cStoneMan");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cStoneMan");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -229,7 +229,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.switcher.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSwitcher");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSwitcher");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -239,7 +239,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.urgal.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cUrgal");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cUrgal");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -249,7 +249,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.viper.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cViper");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cViper");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -259,7 +259,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.wolverine.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cWolverine");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cWolverine");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -269,7 +269,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.critical.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cCritical");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cCritical");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -279,7 +279,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.avatar.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cAvatar");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cAvatar");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -289,7 +289,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.gladiator.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cGladiator");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cGladiator");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -299,7 +299,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.naruto.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cNaruto");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cNaruto");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -309,7 +309,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.hulk.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cHulk");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cHulk");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -319,7 +319,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.milkman.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cMilkman");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cMilkman");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -329,7 +329,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.salamander.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSalamander");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSalamander");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -339,7 +339,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.skeleton.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §Skeleton");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½Skeleton");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -349,7 +349,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.snail.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSnail");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSnail");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -359,7 +359,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.stomper.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cStomper");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cStomper");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -369,7 +369,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.sumo.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSumo");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSumo");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -379,7 +379,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.ninja.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cNinja");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cNinja");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -389,7 +389,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.viking.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cViking");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cViking");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -399,7 +399,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.frosty.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cFrosty");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cFrosty");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -409,7 +409,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.camel.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cCamel");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cCamel");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -419,7 +419,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.fisherman.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cFisherman");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cFisherman");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -429,7 +429,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.poseidon.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cPoseidon");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cPoseidon");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -439,7 +439,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.confuser.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cConfuser");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cConfuser");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -449,7 +449,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.barbarian.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cBarbarian");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cBarbarian");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -459,7 +459,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.turtle.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cTurtle");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cTurtle");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -469,7 +469,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.reaper.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cReaper");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cReaper");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -479,7 +479,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.forcefield.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cForcefield");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cForcefield");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -489,7 +489,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.vacuum.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cVacuum");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cVacuum");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -499,7 +499,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.resouper.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cResouper");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cResouper");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -509,7 +509,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.weakhand.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cWeakhand");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cWeakhand");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -519,7 +519,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.flash.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cFlash");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cFlash");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -529,7 +529,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.launcher.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cLauncher");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cLauncher");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -539,7 +539,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.neo.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cNeo");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cNeo");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -549,7 +549,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.darkgod.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cDarkGod");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cDarkGod");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -559,7 +559,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.launcher.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cLauncher");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cLauncher");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -569,7 +569,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.neo.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cNeo");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cNeo");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -579,7 +579,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.achilles.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cAchilles");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cAchilles");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -589,7 +589,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.andromedaflor.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cAndromeda");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cAndromeda");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -599,7 +599,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.hunter.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cHunter");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cHunter");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -609,7 +609,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.scorpionarrow.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cScorpion");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cScorpion");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -619,7 +619,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.clear.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cClear");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cClear");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -629,7 +629,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.kyuubi.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cKyuubi");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cKyuubi");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -639,7 +639,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.sayajin.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSayajin");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSayajin");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -649,7 +649,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.troll.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cTroll");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cTroll");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -659,7 +659,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.magma.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cMagma");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cMagma");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -669,7 +669,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.infected.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cInfected");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cInfected");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -679,7 +679,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.accumulator.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cAccumulator");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cAccumulator");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -689,7 +689,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.deshfire.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cDeshfire");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cDeshfire");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -699,7 +699,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.sonic.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cSonic");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cSonic");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -709,7 +709,7 @@ public class BarApiKit implements Listener {
 			return;
 		}
 		if (KitManager.turbo.contains(t.getName())) {
-			BarAPI.setMessage(p, "§7" + t.getName() + " §6- §cTurbo");
+			BarAPI.setMessage(p, "ï¿½7" + t.getName() + " ï¿½6- ï¿½cTurbo");
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {

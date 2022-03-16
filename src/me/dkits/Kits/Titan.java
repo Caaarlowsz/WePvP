@@ -15,7 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Titan implements Listener {
@@ -38,16 +38,16 @@ public class Titan implements Listener {
 		if (!i.getItemMeta().hasDisplayName()) {
 			return;
 		}
-		if (i.getItemMeta().getDisplayName().startsWith("§a§lTitan Mode")) {
+		if (i.getItemMeta().getDisplayName().startsWith("ï¿½aï¿½lTitan Mode")) {
 			e.setCancelled(true);
 			KitManager.titanmode.add(p.getName());
-			p.sendMessage("§a§l!! §7Voc\u00ea est\u00e1 invencivel por 10 segundos!");
+			p.sendMessage("ï¿½aï¿½l!! ï¿½7Voc\u00ea est\u00e1 invencivel por 10 segundos!");
 			final ItemStack n = i;
 			final ItemMeta m = n.getItemMeta();
-			m.setDisplayName("§c§lSeu modo titan precisa recarregar...");
+			m.setDisplayName("ï¿½cï¿½lSeu modo titan precisa recarregar...");
 			n.setItemMeta(m);
 			e.getPlayer().setItemInHand(n);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance(),
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) WePvP.instance(),
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {
@@ -56,9 +56,9 @@ public class Titan implements Listener {
 					}, 200L);
 			return;
 		}
-		if (i.getItemMeta().getDisplayName().startsWith("§c§lTitan Mode")) {
+		if (i.getItemMeta().getDisplayName().startsWith("ï¿½cï¿½lTitan Mode")) {
 			e.setCancelled(true);
-			p.sendMessage("§c§l!! §7Voc\u00ea precisa recarregar antes de usar novamente...");
+			p.sendMessage("ï¿½cï¿½l!! ï¿½7Voc\u00ea precisa recarregar antes de usar novamente...");
 		}
 	}
 
@@ -80,7 +80,7 @@ public class Titan implements Listener {
 				final Player d = (Player) e.getDamager();
 				if (KitManager.titanmode.contains(p.getName())) {
 					e.setCancelled(true);
-					d.sendMessage("§c§l!! §7Voc\u00ea n\u00e3o pode bater em alguem no modo titan!");
+					d.sendMessage("ï¿½cï¿½l!! ï¿½7Voc\u00ea n\u00e3o pode bater em alguem no modo titan!");
 				}
 			}
 		}
@@ -88,7 +88,7 @@ public class Titan implements Listener {
 			final Player d2 = (Player) e.getDamager();
 			if (KitManager.titanmode.contains(d2.getName())) {
 				e.setCancelled(true);
-				d2.sendMessage("§c§l!! §7Voc\u00ea n\u00e3o pode dar dano em alguem enquanto estiver no modo titan!");
+				d2.sendMessage("ï¿½cï¿½l!! ï¿½7Voc\u00ea n\u00e3o pode dar dano em alguem enquanto estiver no modo titan!");
 			}
 		}
 	}
@@ -103,16 +103,16 @@ public class Titan implements Listener {
 					if (e.getPlayer().isSneaking()) {
 						Titan.this.time.put(e.getPlayer(), Titan.this.time.get(e.getPlayer()) + 1);
 						if (Titan.this.time.get(e.getPlayer()) == 10) {
-							e.getPlayer().sendMessage("§a§l!! §7Titan recarregado.");
+							e.getPlayer().sendMessage("ï¿½aï¿½l!! ï¿½7Titan recarregado.");
 							for (int i = 0; i < 36; ++i) {
 								if (e.getPlayer().getInventory().getItem(i) != null
 										&& e.getPlayer().getInventory().getItem(i).hasItemMeta()
 										&& e.getPlayer().getInventory().getItem(i).getItemMeta().hasDisplayName()
 										&& e.getPlayer().getInventory().getItem(i).getItemMeta().getDisplayName()
-												.startsWith("§c§lTitan Mode")) {
+												.startsWith("ï¿½cï¿½lTitan Mode")) {
 									final ItemStack n = e.getPlayer().getInventory().getItem(i);
 									final ItemMeta m = n.getItemMeta();
-									m.setDisplayName("§a§lTitan Mode");
+									m.setDisplayName("ï¿½aï¿½lTitan Mode");
 									n.setItemMeta(m);
 									e.getPlayer().getInventory().setItem(i, n);
 									e.getPlayer().updateInventory();
@@ -126,7 +126,7 @@ public class Titan implements Listener {
 						this.cancel();
 					}
 				}
-			}.runTaskTimer((Plugin) Main.instance(), 0L, 20L);
+			}.runTaskTimer((Plugin) WePvP.instance(), 0L, 20L);
 		}
 	}
 }

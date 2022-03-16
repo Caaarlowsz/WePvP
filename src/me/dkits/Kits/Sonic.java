@@ -30,7 +30,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Sonic implements Listener, CommandExecutor {
@@ -47,9 +47,9 @@ public class Sonic implements Listener, CommandExecutor {
 		this.cooldown = new ArrayList<String>();
 		this.poison1 = new ArrayList<String>();
 		this.fall = new ArrayList<String>();
-		this.time = Main.plugin.getConfig().getInt("Time");
-		this.boost = Main.plugin.getConfig().getInt("Boost");
-		this.poison = Main.plugin.getConfig().getInt("Poison");
+		this.time = WePvP.plugin.getConfig().getInt("Time");
+		this.boost = WePvP.plugin.getConfig().getInt("Boost");
+		this.poison = WePvP.plugin.getConfig().getInt("Poison");
 	}
 
 	private ItemStack colorIn(final Material mat) {
@@ -64,7 +64,7 @@ public class Sonic implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("sonic")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.sonic")) {
-				p.sendMessage("§7Voce escolheu » §cSonic");
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cSonic");
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.sonic.add(sender.getName());
@@ -72,16 +72,16 @@ public class Sonic implements Listener, CommandExecutor {
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cEspada");
+				espadameta.setDisplayName("ï¿½cEspada");
 				espada.setItemMeta(espadameta);
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().addItem(new ItemStack[] { espada });
 				final ItemStack sonic = new ItemStack(Material.LAPIS_BLOCK);
 				final ItemMeta ksonic = sonic.getItemMeta();
-				ksonic.setDisplayName("§bSonic");
+				ksonic.setDisplayName("ï¿½bSonic");
 				sonic.setItemMeta(ksonic);
 				p.getInventory().addItem(new ItemStack[] { sonic });
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lSonic", 10);
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lSonic", 10);
 				KitManager.giveSoup(p, 34);
 			}
 			return true;
@@ -105,9 +105,9 @@ public class Sonic implements Listener, CommandExecutor {
 		final Player p = e.getPlayer();
 		final ItemStack i = p.getItemInHand();
 		if ((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
-				&& i.getType() == Material.getMaterial(Main.plugin.getConfig().getString("ItemType"))
+				&& i.getType() == Material.getMaterial(WePvP.plugin.getConfig().getString("ItemType"))
 				&& i.getItemMeta().getDisplayName()
-						.equalsIgnoreCase(Main.plugin.getConfig().getString("ItemName").replaceAll("&", "§"))) {
+						.equalsIgnoreCase(WePvP.plugin.getConfig().getString("ItemName").replaceAll("&", "ï¿½"))) {
 			e.setCancelled(true);
 			if (!this.cooldown.contains(p.getName())) {
 				p.setVelocity(p.getEyeLocation().getDirection().multiply(this.boost).add(new Vector(0, 0, 0)));
@@ -121,22 +121,22 @@ public class Sonic implements Listener, CommandExecutor {
 				inv.setLeggings(this.colorIn(Material.LEATHER_LEGGINGS));
 				inv.setBoots(this.colorIn(Material.LEATHER_BOOTS));
 				p.updateInventory();
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(WePvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Sonic.this.poison1.remove(p.getName());
 						p.getInventory().setArmorContents((ItemStack[]) Sonic.this.playerArmor.remove(p));
 					}
 				}, 60L);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(WePvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Sonic.this.cooldown.remove(p.getName());
-						p.sendMessage("§aO cooldown acabou!");
+						p.sendMessage("ï¿½aO cooldown acabou!");
 					}
 				}, (long) (this.time * 20));
 			} else {
-				p.sendMessage("§4Voc\u00ea est\u00e1 em cooldown!");
+				p.sendMessage("ï¿½4Voc\u00ea est\u00e1 em cooldown!");
 			}
 		}
 	}

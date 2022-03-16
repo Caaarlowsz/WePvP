@@ -15,13 +15,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Clear implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Clear(final Main main) {
+	public Clear(final WePvP main) {
 		Clear.plugin = main;
 	}
 
@@ -30,7 +30,7 @@ public class Clear implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("clear")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.clear")) {
-					p.sendMessage("§7Voce escolheu » §cClear");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cClear");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.clear.add(sender.getName());
@@ -38,16 +38,16 @@ public class Clear implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
 					p.getInventory().addItem(new ItemStack[] { new ItemStack(Material.SHEARS) });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lClear", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lClear", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 34);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Clear.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							Clear.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
@@ -66,9 +66,9 @@ public class Clear implements Listener, CommandExecutor {
 			if (KitManager.clear.contains(damager.getName())) {
 				KitManager.clear.add(damager.getName());
 				if (damager.getInventory().getItemInHand().getType() == Material.SHEARS && Math.random() < 2.0) {
-					damager.sendMessage("§aVoc\u00ea afetou um player!");
+					damager.sendMessage("ï¿½aVoc\u00ea afetou um player!");
 					victim.getInventory().setChestplate((ItemStack) null);
-					victim.sendMessage("§aVoc\u00ea foi afetado por um clear, e perdeu sua armadura!");
+					victim.sendMessage("ï¿½aVoc\u00ea foi afetado por um clear, e perdeu sua armadura!");
 				}
 			}
 		}

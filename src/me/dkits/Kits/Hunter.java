@@ -24,11 +24,11 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Hunter implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 	public static HashMap<String, Arrow> tiros;
 
@@ -37,7 +37,7 @@ public class Hunter implements Listener, CommandExecutor {
 		Hunter.tiros = new HashMap<String, Arrow>();
 	}
 
-	public Hunter(final Main main) {
+	public Hunter(final WePvP main) {
 		Hunter.plugin = main;
 	}
 
@@ -45,7 +45,7 @@ public class Hunter implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("hunter")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.hunter")) {
-				p.sendMessage("§7Voce pegou o Kit : §6Hunter");
+				p.sendMessage("ï¿½7Voce pegou o Kit : ï¿½6Hunter");
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.hunter.add(sender.getName());
@@ -53,10 +53,10 @@ public class Hunter implements Listener, CommandExecutor {
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cSword");
+				espadameta.setDisplayName("ï¿½cSword");
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().addItem(new ItemStack[] { espada });
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lHunter", 10);
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lHunter", 10);
 				p.getInventory().addItem(new ItemStack[] { new ItemStack(Material.STICK) });
 				KitManager.giveSoup(p, 34);
 			}

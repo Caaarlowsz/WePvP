@@ -23,14 +23,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Ninja implements Listener, CommandExecutor {
 	public static HashMap<Player, Player> a;
 	public static HashMap<Player, Long> b;
 	public static List<Player> cooldownbk;
-	public static Main plugin;
+	public static WePvP plugin;
 
 	static {
 		Ninja.a = new HashMap<Player, Player>();
@@ -38,7 +38,7 @@ public class Ninja implements Listener, CommandExecutor {
 		Ninja.cooldownbk = new ArrayList<Player>();
 	}
 
-	public Ninja(final Main main) {
+	public Ninja(final WePvP main) {
 		Ninja.plugin = main;
 	}
 
@@ -46,7 +46,7 @@ public class Ninja implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("ninja") && !KitManager.usandokit.contains(p.getName())
 				&& p.hasPermission("kit.ninja")) {
-			p.sendMessage("§7Voce escolheu » §cNinja");
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cNinja");
 			p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 			KitManager.usandokit.add(p.getName());
 			KitManager.ninja.add(sender.getName());
@@ -54,12 +54,12 @@ public class Ninja implements Listener, CommandExecutor {
 			p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 			final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 			final ItemMeta espadameta = espada.getItemMeta();
-			espadameta.setDisplayName("§cSword");
+			espadameta.setDisplayName("ï¿½cSword");
 			espada.addEnchantment(Enchantment.DURABILITY, 3);
 			p.getInventory().addItem(new ItemStack[] { espada });
 			KitManager.giveA(p);
 			KitManager.giveSoup(p, 35);
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lNinja", 10);
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lNinja", 10);
 		}
 		return true;
 	}
@@ -106,7 +106,7 @@ public class Ninja implements Listener, CommandExecutor {
 						localPlayer1.sendMessage(ChatColor.RED + "O Ultimo jogador hitado esta muito longe!");
 					}
 				} else {
-					localPlayer1.sendMessage("§c§lCooldown §f> §6" + str + " segundos!");
+					localPlayer1.sendMessage("ï¿½cï¿½lCooldown ï¿½f> ï¿½6" + str + " segundos!");
 				}
 			}
 		}

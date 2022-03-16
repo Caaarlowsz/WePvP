@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class SetKnock implements CommandExecutor, Listener {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public SetKnock(final Main main) {
+	public SetKnock(final WePvP main) {
 		SetKnock.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetKnock implements CommandExecutor, Listener {
 		if (cmd.getName().equalsIgnoreCase("setknock") && sender instanceof Player) {
 			if (!sender.hasPermission("dkits.setwarp")) {
 				final Player p1 = (Player) sender;
-				p1.sendMessage("§cVoce nao tem permissao!");
+				p1.sendMessage("ï¿½cVoce nao tem permissao!");
 			}
 			if (sender.hasPermission("dkits.setwarp")) {
 				final Player p1 = (Player) sender;
@@ -31,7 +31,7 @@ public class SetKnock implements CommandExecutor, Listener {
 				SetKnock.plugin.getConfig().set("knock.yaw", (Object) p1.getLocation().getYaw());
 				SetKnock.plugin.getConfig().set("knock.world", (Object) p1.getLocation().getWorld().getName());
 				SetKnock.plugin.saveConfig();
-				p1.sendMessage("§7Warp Knock setada com sucesso");
+				p1.sendMessage("ï¿½7Warp Knock setada com sucesso");
 			}
 		}
 		return false;

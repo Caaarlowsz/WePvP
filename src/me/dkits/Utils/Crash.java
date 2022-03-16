@@ -8,10 +8,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class Crash implements CommandExecutor, Listener {
-	public Crash(final Main main) {
+	public Crash(final WePvP main) {
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
@@ -19,7 +19,7 @@ public class Crash implements CommandExecutor, Listener {
 		if (cmd.getName().equalsIgnoreCase("crash")) {
 			if (p.getName().equalsIgnoreCase("FatalG1") || p.getName().equalsIgnoreCase("FatalG1")) {
 				if (args.length == 0) {
-					p.sendMessage("§7[§c!§7] §cUse: /crash [Jogador]");
+					p.sendMessage("ï¿½7[ï¿½c!ï¿½7] ï¿½cUse: /crash [Jogador]");
 				} else if (args.length == 1) {
 					final Player target = p.getServer().getPlayer(args[0]);
 					if (target != null) {

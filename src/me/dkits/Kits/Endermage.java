@@ -22,15 +22,15 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Endermage implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	String teleport;
 
-	public Endermage(final Main main) {
-		this.teleport = "§cO jogador foi puxado!\n§7Voce esta invencivel por §c5 §7segundos ! Prepare-se para a luta !";
+	public Endermage(final WePvP main) {
+		this.teleport = "ï¿½cO jogador foi puxado!\nï¿½7Voce esta invencivel por ï¿½c5 ï¿½7segundos ! Prepare-se para a luta !";
 		Endermage.plugin = main;
 	}
 
@@ -107,7 +107,7 @@ public class Endermage implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("endermage")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.endermage")) {
-					p.sendMessage("§7Voce escolheu » §cEndermage");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cEndermage");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.endermage.add(sender.getName());
@@ -116,12 +116,12 @@ public class Endermage implements Listener, CommandExecutor {
 					p.getInventory().addItem(new ItemStack[] { new ItemStack(Material.STONE_SWORD) });
 					final ItemStack bow = new ItemStack(Material.PORTAL);
 					final ItemMeta bowmeta = bow.getItemMeta();
-					bowmeta.setDisplayName("§5Endermage");
+					bowmeta.setDisplayName("ï¿½5Endermage");
 					bow.setItemMeta(bowmeta);
 					p.getInventory().addItem(new ItemStack[] { bow });
 					KitManager.giveSoup(p, 34);
 					KitManager.giveA(p);
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lEndermage", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lEndermage", 10);
 				} else {
 					p.sendMessage(ChatColor.RED + "Voce nao tem esse kit!");
 				}

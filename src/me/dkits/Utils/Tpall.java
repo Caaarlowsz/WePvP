@@ -6,12 +6,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class Tpall implements CommandExecutor {
-	Main main;
+	WePvP main;
 
-	public Tpall(Main plugin) {
+	public Tpall(WePvP plugin) {
 		plugin = this.main;
 	}
 
@@ -23,7 +23,7 @@ public class Tpall implements CommandExecutor {
 				final Player player = onlinePlayers[i];
 				player.teleport(s.getLocation());
 			}
-			Bukkit.getServer().broadcastMessage("§7§lComando TPAll Usado por um §bSTAFF! §b[§f" + s.getName() + "§b]");
+			Bukkit.getServer().broadcastMessage("ï¿½7ï¿½lComando TPAll Usado por um ï¿½bSTAFF! ï¿½b[ï¿½f" + s.getName() + "ï¿½b]");
 			return true;
 		}
 		return false;

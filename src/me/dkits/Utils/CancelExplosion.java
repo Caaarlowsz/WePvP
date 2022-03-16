@@ -17,12 +17,12 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class CancelExplosion implements Listener {
-	private static Main plugin;
+	private static WePvP plugin;
 
-	public CancelExplosion(final Main instance) {
+	public CancelExplosion(final WePvP instance) {
 		CancelExplosion.plugin = instance;
 	}
 

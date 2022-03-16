@@ -23,15 +23,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 import net.minecraft.server.v1_7_R4.EntityHuman;
 
 public class Grappler implements CommandExecutor, Listener {
-	public static Main plugin;
+	public static WePvP plugin;
 	Map<Player, Cordinha> hooks;
 
-	public Grappler(final Main main) {
+	public Grappler(final WePvP main) {
 		this.hooks = new HashMap<Player, Cordinha>();
 		Grappler.plugin = main;
 	}
@@ -40,24 +40,24 @@ public class Grappler implements CommandExecutor, Listener {
 		if (Label.equalsIgnoreCase("grappler")) {
 			final Player p = (Player) Sender;
 			if (KitManager.usandokit.contains(p.getName())) {
-				p.sendMessage("§7§oVoce J\u00e1 Esta Usando Um Kit !");
+				p.sendMessage("ï¿½7ï¿½oVoce J\u00e1 Esta Usando Um Kit !");
 				return true;
 			}
 			if (!p.hasPermission("kit.grappler")) {
-				p.sendMessage("§c§lSem Permissao");
+				p.sendMessage("ï¿½cï¿½lSem Permissao");
 				return true;
 			}
 			final ItemStack Espada = new ItemStack(Material.STONE_SWORD);
 			final ItemMeta kEspada = Espada.getItemMeta();
-			kEspada.setDisplayName("§cEspada §4- §bGrappler");
+			kEspada.setDisplayName("ï¿½cEspada ï¿½4- ï¿½bGrappler");
 			kEspada.addEnchant(Enchantment.DURABILITY, 3, true);
 			Espada.setItemMeta(kEspada);
 			final ItemStack Grappler = new ItemStack(Material.LEASH);
 			final ItemMeta kGrappler = Grappler.getItemMeta();
-			kGrappler.setDisplayName("§5Grappler");
+			kGrappler.setDisplayName("ï¿½5Grappler");
 			Grappler.setItemMeta(kGrappler);
-			p.sendMessage("§7Voce escolheu » §cGrappler");
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lGrappler", 10);
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cGrappler");
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lGrappler", 10);
 			p.getInventory().clear();
 			final ItemStack armadura = new ItemStack(Material.LEATHER_CHESTPLATE);
 			p.getInventory().setChestplate(armadura);

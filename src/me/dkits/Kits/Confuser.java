@@ -20,13 +20,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Confuser implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Confuser(final Main main) {
+	public Confuser(final WePvP main) {
 		Confuser.plugin = main;
 	}
 
@@ -35,7 +35,7 @@ public class Confuser implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("confuser")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.confuser")) {
-					p.sendMessage("§7Voce escolheu » §cConfuser");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cConfuser");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.confuser.add(sender.getName());
@@ -43,15 +43,15 @@ public class Confuser implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lConfuser", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lConfuser", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 35);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Confuser.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							Confuser.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',

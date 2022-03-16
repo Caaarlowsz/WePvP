@@ -62,7 +62,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class ListenersUtils implements Listener {
 	public Plugin plugin;
@@ -74,7 +74,7 @@ public class ListenersUtils implements Listener {
 		ListenersUtils.combatlog = new ArrayList<String>();
 	}
 
-	public ListenersUtils(final Main plugin) {
+	public ListenersUtils(final WePvP plugin) {
 		this.inv = new ArrayList<String>();
 		this.frente = new ArrayList<String>();
 		this.plugin = (Plugin) plugin;
@@ -323,8 +323,8 @@ public class ListenersUtils implements Listener {
 			String[] array;
 			for (int length = (array = text).length, i = 0; i < length; ++i) {
 				String line = array[i];
-				line = line.replaceAll("&", "§");
-				line = line.replaceAll("&&", "§§");
+				line = line.replaceAll("&", "ï¿½");
+				line = line.replaceAll("&&", "ï¿½ï¿½");
 				event.setLine(count, line);
 				++count;
 			}
@@ -445,7 +445,7 @@ public class ListenersUtils implements Listener {
 		final Player p = e.getPlayer();
 		if (ListenersUtils.combatlog.contains(p.getName())) {
 			p.setHealth(0.0);
-			Bukkit.broadcastMessage("§c" + p.getName() + "§7 deslogou em PVP!");
+			Bukkit.broadcastMessage("ï¿½c" + p.getName() + "ï¿½7 deslogou em PVP!");
 		}
 	}
 
@@ -536,8 +536,8 @@ public class ListenersUtils implements Listener {
 	@EventHandler
 	public void onPlayerChatRank(final AsyncPlayerChatEvent e) {
 		final Player p = e.getPlayer();
-		e.setFormat(String.valueOf(p.getDisplayName()) + ChatColor.RED + " » " + ChatColor.RESET
-				+ e.getMessage().replace("&", "§"));
+		e.setFormat(String.valueOf(p.getDisplayName()) + ChatColor.RED + " ï¿½ " + ChatColor.RESET
+				+ e.getMessage().replace("&", "ï¿½"));
 	}
 
 	@EventHandler
@@ -560,7 +560,7 @@ public class ListenersUtils implements Listener {
 			final String cmd = e.getMessage().split(" ")[0];
 			final HelpTopic topic = Bukkit.getServer().getHelpMap().getHelpTopic(cmd);
 			if (topic == null) {
-				p.sendMessage("§7Comando Incorreto");
+				p.sendMessage("ï¿½7Comando Incorreto");
 				p.playSound(p.getLocation(), Sound.SUCCESSFUL_HIT, 1.0f, 1.0f);
 				e.setCancelled(true);
 			}

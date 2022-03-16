@@ -11,12 +11,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class mlg implements Listener {
-	Main plugin;
+	WePvP plugin;
 
-	public mlg(final Main plugin) {
+	public mlg(final WePvP plugin) {
 		this.plugin = plugin;
 	}
 
@@ -38,7 +38,7 @@ public class mlg implements Listener {
 					@Override
 					public void run() {
 						Bukkit.getWorld("mlg.world").getBlockAt(water).setType(Material.AIR);
-						p.sendMessage("§7Parabens voce §6acertou!");
+						p.sendMessage("ï¿½7Parabens voce ï¿½6acertou!");
 						p.chat("/mlg");
 					}
 				}, 10L);

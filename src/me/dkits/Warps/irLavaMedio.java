@@ -13,15 +13,15 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 import me.dkits.API.SettingsManager;
 
 public class irLavaMedio implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static SettingsManager sm;
 
-	public irLavaMedio(final Main main) {
+	public irLavaMedio(final WePvP main) {
 		irLavaMedio.plugin = main;
 	}
 
@@ -40,7 +40,7 @@ public class irLavaMedio implements Listener, CommandExecutor {
 			p.getInventory().setHelmet((ItemStack) null);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
-			p.sendMessage("§7Voce ira se teletransportar em §c5 §7segundos! ");
+			p.sendMessage("ï¿½7Voce ira se teletransportar em ï¿½c5 ï¿½7segundos! ");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) irLavaMedio.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {

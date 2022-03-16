@@ -6,12 +6,12 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class ServerJoinKick implements Listener {
-	public Main plugin;
+	public WePvP plugin;
 
-	public ServerJoinKick(final Main instance) {
+	public ServerJoinKick(final WePvP instance) {
 		this.plugin = instance;
 	}
 
@@ -19,15 +19,15 @@ public class ServerJoinKick implements Listener {
 	public void onPlayerLogin(final PlayerLoginEvent e) {
 		if (e.getResult() == PlayerLoginEvent.Result.KICK_FULL) {
 			final String KICK_MSG = this.plugin.getConfig().getString("MSG_Kick");
-			e.setKickMessage(KICK_MSG.replace("&", "§").replace("{linha2}", "\n"));
+			e.setKickMessage(KICK_MSG.replace("&", "ï¿½").replace("{linha2}", "\n"));
 		}
 		if (e.getResult() == PlayerLoginEvent.Result.KICK_WHITELIST) {
 			final String KICK_MSG = this.plugin.getConfig().getString("MSG_Manutencao");
-			e.setKickMessage(KICK_MSG.replace("&", "§").replace("{linha2}", "\n"));
+			e.setKickMessage(KICK_MSG.replace("&", "ï¿½").replace("{linha2}", "\n"));
 		}
 		if (e.getResult() == PlayerLoginEvent.Result.KICK_BANNED) {
 			final String KICK_MSG = this.plugin.getConfig().getString("MSG_Ban");
-			e.setKickMessage(KICK_MSG.replace("&", "§").replace("{linha2}", "\n"));
+			e.setKickMessage(KICK_MSG.replace("&", "ï¿½").replace("{linha2}", "\n"));
 		}
 	}
 

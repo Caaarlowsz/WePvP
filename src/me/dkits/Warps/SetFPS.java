@@ -6,12 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class SetFPS implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public SetFPS(final Main main) {
+	public SetFPS(final WePvP main) {
 		SetFPS.plugin = main;
 	}
 
@@ -20,7 +20,7 @@ public class SetFPS implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("setfps") && sender instanceof Player) {
 			if (!sender.hasPermission("dkits.setwarp")) {
 				final Player p = (Player) sender;
-				p.sendMessage("§cVoce nao tem permissao!");
+				p.sendMessage("ï¿½cVoce nao tem permissao!");
 			}
 			if (sender.hasPermission("dkits.setwarp")) {
 				final Player p = (Player) sender;
@@ -31,7 +31,7 @@ public class SetFPS implements Listener, CommandExecutor {
 				SetFPS.plugin.getConfig().set("fps.yaw", (Object) p.getLocation().getYaw());
 				SetFPS.plugin.getConfig().set("fps.world", (Object) p.getLocation().getWorld().getName());
 				SetFPS.plugin.saveConfig();
-				p.sendMessage("§7Warp FPS setada com sucesso");
+				p.sendMessage("ï¿½7Warp FPS setada com sucesso");
 			}
 			return true;
 		}

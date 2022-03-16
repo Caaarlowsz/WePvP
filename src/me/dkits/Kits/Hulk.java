@@ -22,18 +22,18 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Hulk implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 
 	static {
 		Hulk.cooldown = new HashMap<String, Long>();
 	}
 
-	public Hulk(final Main main) {
+	public Hulk(final WePvP main) {
 		Hulk.plugin = main;
 	}
 
@@ -42,7 +42,7 @@ public class Hulk implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("hulk")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.hulk")) {
-					p.sendMessage("§7Voce escolheu » §cHulk");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cHulk");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.hulk.add(sender.getName());
@@ -50,16 +50,16 @@ public class Hulk implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
 					p.getInventory().addItem(new ItemStack[] { new ItemStack(Material.SADDLE) });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lHulk", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lHulk", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 34);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Hulk.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							Hulk.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',

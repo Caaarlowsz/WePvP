@@ -14,16 +14,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 import me.dkits.Scoreboard.ScoreBoard;
 import me.dkits.Utils.PlayerManager;
 
 public class DeathEvent implements Listener {
 	public PlayerManager pm;
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public DeathEvent(final Main instance) {
+	public DeathEvent(final WePvP instance) {
 		this.pm = PlayerManager.instance;
 		DeathEvent.plugin = instance;
 	}
@@ -34,21 +34,21 @@ public class DeathEvent implements Listener {
 		p.getInventory().clear();
 		JoinEvent.removecooldown(p);
 		final String MSG_Death = DeathEvent.plugin.getConfig().getString("MSG_Death");
-		e.setDeathMessage(MSG_Death.replace("&", "§").replace("{player}", p.getName()));
+		e.setDeathMessage(MSG_Death.replace("&", "ï¿½").replace("{player}", p.getName()));
 		KitManager.removeAbility(p);
 		final ItemStack glasss = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta glasssv = glasss.getItemMeta();
-		glasssv.setDisplayName("§7«");
+		glasssv.setDisplayName("ï¿½7ï¿½");
 		glasss.setItemMeta(glasssv);
 		final ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta glassv = glass.getItemMeta();
-		glassv.setDisplayName("§7»");
+		glassv.setDisplayName("ï¿½7ï¿½");
 		glass.setItemMeta(glassv);
-		final ItemStack vidro1 = KitManager.addItemName("§c«", Material.THIN_GLASS);
-		final ItemStack vidro2 = KitManager.addItemName("§c»", Material.THIN_GLASS);
-		final ItemStack kits = KitManager.addItemName("§6»§7Kits", Material.CHEST);
-		final ItemStack loja = KitManager.addItemName("§6»§bShop Kits", Material.DIAMOND);
-		final ItemStack warps = KitManager.addItemName("§6»§7Warps", Material.MAP);
+		final ItemStack vidro1 = KitManager.addItemName("ï¿½cï¿½", Material.THIN_GLASS);
+		final ItemStack vidro2 = KitManager.addItemName("ï¿½cï¿½", Material.THIN_GLASS);
+		final ItemStack kits = KitManager.addItemName("ï¿½6ï¿½ï¿½7Kits", Material.CHEST);
+		final ItemStack loja = KitManager.addItemName("ï¿½6ï¿½ï¿½bShop Kits", Material.DIAMOND);
+		final ItemStack warps = KitManager.addItemName("ï¿½6ï¿½ï¿½7Warps", Material.MAP);
 		KitManager.removeAbility(p);
 		p.getInventory().setItem(0, glass);
 		p.getInventory().setItem(1, glass);
@@ -77,17 +77,17 @@ public class DeathEvent implements Listener {
 		p.getInventory().clear();
 		final ItemStack glasss = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta glasssv = glasss.getItemMeta();
-		glasssv.setDisplayName("§7«");
+		glasssv.setDisplayName("ï¿½7ï¿½");
 		glasss.setItemMeta(glasssv);
 		final ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 		final ItemMeta glassv = glass.getItemMeta();
-		glassv.setDisplayName("§7»");
+		glassv.setDisplayName("ï¿½7ï¿½");
 		glass.setItemMeta(glassv);
-		final ItemStack vidro1 = KitManager.addItemName("§c«", Material.THIN_GLASS);
-		final ItemStack vidro2 = KitManager.addItemName("§c»", Material.THIN_GLASS);
-		final ItemStack kits = KitManager.addItemName("§6»§7Kits", Material.CHEST);
-		final ItemStack loja = KitManager.addItemName("§6»§bShop Kits", Material.DIAMOND);
-		final ItemStack warps = KitManager.addItemName("§6»§7Warps", Material.MAP);
+		final ItemStack vidro1 = KitManager.addItemName("ï¿½cï¿½", Material.THIN_GLASS);
+		final ItemStack vidro2 = KitManager.addItemName("ï¿½cï¿½", Material.THIN_GLASS);
+		final ItemStack kits = KitManager.addItemName("ï¿½6ï¿½ï¿½7Kits", Material.CHEST);
+		final ItemStack loja = KitManager.addItemName("ï¿½6ï¿½ï¿½bShop Kits", Material.DIAMOND);
+		final ItemStack warps = KitManager.addItemName("ï¿½6ï¿½ï¿½7Warps", Material.MAP);
 		KitManager.removeAbility(p);
 		p.getInventory().setItem(0, glass);
 		p.getInventory().setItem(1, glass);
@@ -107,11 +107,11 @@ public class DeathEvent implements Listener {
 		e.setDeathMessage((String) null);
 		if (p.getKiller() instanceof Player) {
 			final Player killer = p.getKiller();
-			Main.econ.depositPlayer(killer.getName(), 150.0);
-			killer.sendMessage("§4* §cVoce ganhou §aR$150§7 §apor matar: §f" + p.getName());
+			WePvP.econ.depositPlayer(killer.getName(), 150.0);
+			killer.sendMessage("ï¿½4* ï¿½cVoce ganhou ï¿½aR$150ï¿½7 ï¿½apor matar: ï¿½f" + p.getName());
 			e.setDeathMessage((String) null);
-			Main.econ.withdrawPlayer(p.getName(), 30.0);
-			p.sendMessage("§4* §cVoce perdeu §aR$30§7! §cpor morrer para: §f" + killer.getName());
+			WePvP.econ.withdrawPlayer(p.getName(), 30.0);
+			p.sendMessage("ï¿½4* ï¿½cVoce perdeu ï¿½aR$30ï¿½7! ï¿½cpor morrer para: ï¿½f" + killer.getName());
 		}
 		e.getDrops().clear();
 	}

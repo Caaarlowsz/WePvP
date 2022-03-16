@@ -22,11 +22,11 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Kyuubi implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 	public static HashMap<String, Long> cooldown2;
 
@@ -35,7 +35,7 @@ public class Kyuubi implements Listener, CommandExecutor {
 		Kyuubi.cooldown2 = new HashMap<String, Long>();
 	}
 
-	public Kyuubi(final Main main) {
+	public Kyuubi(final WePvP main) {
 		Kyuubi.plugin = main;
 	}
 
@@ -44,7 +44,7 @@ public class Kyuubi implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("kyuubi")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.kyuubi")) {
-					p.sendMessage("§7Voce escolheu » §cKyuubi");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cKyuubi");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.kyuubi.add(sender.getName());
@@ -52,25 +52,25 @@ public class Kyuubi implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.GOLD_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
 					final ItemStack bp = new ItemStack(Material.BLAZE_POWDER);
 					final ItemMeta bpmeta = bp.getItemMeta();
-					bpmeta.setDisplayName("§cDefesa");
+					bpmeta.setDisplayName("ï¿½cDefesa");
 					bp.setItemMeta(bpmeta);
 					p.getInventory().addItem(new ItemStack[] { new ItemStack(bp) });
 					final ItemStack mc = new ItemStack(Material.NETHER_STAR);
 					final ItemMeta mcmeta = mc.getItemMeta();
-					mcmeta.setDisplayName("§cAtaque");
+					mcmeta.setDisplayName("ï¿½cAtaque");
 					mc.setItemMeta(mcmeta);
 					p.getInventory().addItem(new ItemStack[] { new ItemStack(mc) });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lKyuubi", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lKyuubi", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 33);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Kyuubi.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							Kyuubi.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
@@ -90,7 +90,7 @@ public class Kyuubi implements Listener, CommandExecutor {
 					|| Kyuubi.cooldown2.get(p.getName()) <= System.currentTimeMillis()) {
 				e.setCancelled(true);
 				p.updateInventory();
-				p.sendMessage(ChatColor.RED + "§4§lHabilidade de defesa ativada....!!!");
+				p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lHabilidade de defesa ativada....!!!");
 				p.getInventory().setChestplate((ItemStack) null);
 				p.getInventory().setChestplate(new ItemStack(Material.GOLD_CHESTPLATE));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 500, 1));
@@ -115,7 +115,7 @@ public class Kyuubi implements Listener, CommandExecutor {
 					|| Kyuubi.cooldown.get(p.getName()) <= System.currentTimeMillis()) {
 				e.setCancelled(true);
 				p.updateInventory();
-				p.sendMessage(ChatColor.RED + "§4§lHabilidade de ataque ativada....!!!");
+				p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lHabilidade de ataque ativada....!!!");
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 500, 2));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 1));

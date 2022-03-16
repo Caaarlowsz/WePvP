@@ -20,18 +20,18 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Salamander implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	static List<String> cooldownzm;
 
 	static {
 		Salamander.cooldownzm = new ArrayList<String>();
 	}
 
-	public Salamander(final Main main) {
+	public Salamander(final WePvP main) {
 		Salamander.plugin = main;
 	}
 
@@ -51,27 +51,27 @@ public class Salamander implements Listener, CommandExecutor {
 		p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 		final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta espadameta = espada.getItemMeta();
-		espadameta.setDisplayName("§cSword");
+		espadameta.setDisplayName("ï¿½cSword");
 		espada.addEnchantment(Enchantment.DURABILITY, 3);
 		p.getInventory().addItem(new ItemStack[] { espada });
 		if (cmd.equalsIgnoreCase("salamander")) {
 			if (KitManager.usandokit.contains(p.getName())) {
-				BarAPI.setMessage(p, "§c§cVoce ja esta usando um kit!", 5);
+				BarAPI.setMessage(p, "ï¿½cï¿½cVoce ja esta usando um kit!", 5);
 				return true;
 			}
 			if (!p.hasPermission("kit.salamander")) {
-				BarAPI.setMessage(p, "§c§oSem permiss\u00e3o!", 10);
+				BarAPI.setMessage(p, "ï¿½cï¿½oSem permiss\u00e3o!", 10);
 				return true;
 			}
 			KitManager.usandokit.add(p.getName());
-			p.sendMessage("§7Voce escolheu » §cSalamander");
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cSalamander");
 			p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 			p.getInventory().setArmorContents((ItemStack[]) null);
 			p.getInventory().clear();
 			p.setGameMode(GameMode.SURVIVAL);
 			KitManager.salamander.add(p.getName());
 			p.getInventory().addItem(new ItemStack[] { espada });
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lSalamander", 10);
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lSalamander", 10);
 			KitManager.giveA(p);
 			KitManager.giveSoup(p, 35);
 		}

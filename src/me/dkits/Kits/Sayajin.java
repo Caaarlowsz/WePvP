@@ -25,18 +25,18 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.BlockIterator;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Sayajin implements CommandExecutor, Listener {
 	public static List<String> cooldown;
-	public static Main plugin;
+	public static WePvP plugin;
 
 	static {
 		Sayajin.cooldown = new ArrayList<String>();
 	}
 
-	public Sayajin(final Main main) {
+	public Sayajin(final WePvP main) {
 		Sayajin.plugin = main;
 	}
 
@@ -45,7 +45,7 @@ public class Sayajin implements CommandExecutor, Listener {
 		if (label.equalsIgnoreCase("sayajin")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.sayajin")) {
-					p.sendMessage("§7Voce escolheu » §cSayajin");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cSayajin");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.sayajin.add(sender.getName());
@@ -53,21 +53,21 @@ public class Sayajin implements CommandExecutor, Listener {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cEspada");
+					espadameta.setDisplayName("ï¿½cEspada");
 					espada.setItemMeta(espadameta);
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
 					final ItemStack rosa = new ItemStack(Material.GOLD_NUGGET);
 					final ItemMeta rosameta = rosa.getItemMeta();
-					rosameta.setDisplayName("§2Sayajin");
+					rosameta.setDisplayName("ï¿½2Sayajin");
 					rosa.setItemMeta(rosameta);
 					p.getInventory().addItem(new ItemStack[] { rosa });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lSayajin", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lSayajin", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 34);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Sayajin.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							Sayajin.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
@@ -107,7 +107,7 @@ public class Sayajin implements CommandExecutor, Listener {
 			p.getInventory().setLeggings(new ItemStack(calca));
 			p.getInventory().setBoots(new ItemStack(chest2));
 			p.updateInventory();
-			p.sendMessage("§3Voce ganhou os poderes de sayajin (Pode voar por 5 segundos)!");
+			p.sendMessage("ï¿½3Voce ganhou os poderes de sayajin (Pode voar por 5 segundos)!");
 			final int i = 5;
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Sayajin.plugin,
 					(Runnable) new Runnable() {
@@ -209,7 +209,7 @@ public class Sayajin implements CommandExecutor, Listener {
 						public void run() {
 							p.setLevel(0);
 							p.setAllowFlight(false);
-							p.sendMessage("§6Voce nao pode voar mais!");
+							p.sendMessage("ï¿½6Voce nao pode voar mais!");
 							p.getInventory().setHelmet((ItemStack) null);
 							p.getInventory().setLeggings((ItemStack) null);
 							p.getInventory().setBoots((ItemStack) null);
@@ -221,7 +221,7 @@ public class Sayajin implements CommandExecutor, Listener {
 						@Override
 						public void run() {
 							Sayajin.cooldown.remove(p.getName());
-							p.sendMessage("§3Voce ja pode virar sayajin novamente!");
+							p.sendMessage("ï¿½3Voce ja pode virar sayajin novamente!");
 						}
 					}, 800L);
 		}

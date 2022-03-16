@@ -16,13 +16,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class irMain implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public irMain(final Main main) {
+	public irMain(final WePvP main) {
 		irMain.plugin = main;
 	}
 
@@ -31,7 +31,7 @@ public class irMain implements Listener, CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("main")) {
 			final Player p = (Player) sender;
 			p.getInventory().clear();
-			p.sendMessage("§7Teleportando em 5 segundos! ");
+			p.sendMessage("ï¿½7Teleportando em 5 segundos! ");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) irMain.plugin, (Runnable) new Runnable() {
@@ -55,14 +55,14 @@ public class irMain implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage("§7Teleportado!");
+					p.sendMessage("ï¿½7Teleportado!");
 					p.removePotionEffect(PotionEffectType.SLOW);
 					p.removePotionEffect(PotionEffectType.JUMP);
 					KitManager.removeAbility(p);
 					KitManager.usandokit.add(p.getName());
 					final ItemStack espada = new ItemStack(Material.DIAMOND_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cMain Sword");
+					espadameta.setDisplayName("ï¿½cMain Sword");
 					espada.addEnchantment(Enchantment.DAMAGE_ALL, 1);
 					p.setFireTicks(0);
 					p.getInventory().setItem(0, espada);

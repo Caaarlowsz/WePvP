@@ -7,7 +7,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class SettingsManager {
 	private static final SettingsManager configuration;
@@ -29,10 +29,10 @@ public class SettingsManager {
 	}
 
 	private SettingsManager(final String fileName) {
-		if (!Main.getPlugin().getDataFolder().exists()) {
-			Main.getPlugin().getDataFolder().mkdir();
+		if (!WePvP.getPlugin().getDataFolder().exists()) {
+			WePvP.getPlugin().getDataFolder().mkdir();
 		}
-		this.file = new File(Main.getPlugin().getDataFolder(), String.valueOf(fileName) + ".yml");
+		this.file = new File(WePvP.getPlugin().getDataFolder(), String.valueOf(fileName) + ".yml");
 		if (!this.file.exists()) {
 			try {
 				this.file.createNewFile();

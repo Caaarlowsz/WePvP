@@ -21,18 +21,18 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Naruto implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 
 	static {
 		Naruto.cooldown = new HashMap<String, Long>();
 	}
 
-	public Naruto(final Main main) {
+	public Naruto(final WePvP main) {
 		Naruto.plugin = main;
 	}
 
@@ -40,7 +40,7 @@ public class Naruto implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("naruto") && !KitManager.usandokit.contains(p.getName())
 				&& p.hasPermission("kit.naruto")) {
-			p.sendMessage("§7Voce escolheu » §cNaruto");
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cNaruto");
 			p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 			KitManager.usandokit.add(p.getName());
 			KitManager.naruto.add(sender.getName());
@@ -49,14 +49,14 @@ public class Naruto implements Listener, CommandExecutor {
 			p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 			final ItemStack netherstar = new ItemStack(Material.NETHER_STAR);
 			final ItemMeta netherstarmeta = netherstar.getItemMeta();
-			netherstarmeta.setDisplayName("§4Kurama");
+			netherstarmeta.setDisplayName("ï¿½4Kurama");
 			final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 			final ItemMeta espadameta = espada.getItemMeta();
-			espadameta.setDisplayName("§cSword");
+			espadameta.setDisplayName("ï¿½cSword");
 			espada.addEnchantment(Enchantment.DURABILITY, 3);
 			p.getInventory().addItem(new ItemStack[] { espada });
 			p.getInventory().addItem(new ItemStack[] { netherstar });
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lNaruto", 10);
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lNaruto", 10);
 			KitManager.giveA(p);
 			KitManager.giveSoup(p, 34);
 		}
@@ -72,7 +72,7 @@ public class Naruto implements Listener, CommandExecutor {
 					|| Naruto.cooldown.get(p.getName()) <= System.currentTimeMillis()) {
 				e.setCancelled(true);
 				p.updateInventory();
-				p.sendMessage(ChatColor.RED + "§4§lLets Go §bKURAMA....!!!");
+				p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lLets Go ï¿½bKURAMA....!!!");
 				p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 500, 0));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 500, 1));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 500, 0));

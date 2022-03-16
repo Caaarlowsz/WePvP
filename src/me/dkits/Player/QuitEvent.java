@@ -7,13 +7,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class QuitEvent implements Listener {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public QuitEvent(final Main instance) {
+	public QuitEvent(final WePvP instance) {
 		QuitEvent.plugin = instance;
 	}
 
@@ -21,11 +21,11 @@ public class QuitEvent implements Listener {
 	public void onQuit(final PlayerQuitEvent e) {
 		final Player p = e.getPlayer();
 		JoinEvent.removecooldown(p);
-		e.setQuitMessage("§9[§4-§9]§f " + p.getName());
+		e.setQuitMessage("ï¿½9[ï¿½4-ï¿½9]ï¿½f " + p.getName());
 		KitManager.removeAbility(p);
-		final ItemStack kits = KitManager.addItemName("§6»§7Kits«", Material.CHEST);
-		final ItemStack loja = KitManager.addItemName("§6«Shop Kits", Material.DIAMOND);
-		final ItemStack warps = KitManager.addItemName("§6»§7Warps", Material.MAP);
+		final ItemStack kits = KitManager.addItemName("ï¿½6ï¿½ï¿½7Kitsï¿½", Material.CHEST);
+		final ItemStack loja = KitManager.addItemName("ï¿½6ï¿½Shop Kits", Material.DIAMOND);
+		final ItemStack warps = KitManager.addItemName("ï¿½6ï¿½ï¿½7Warps", Material.MAP);
 		KitManager.removeAbility(p);
 		p.getInventory().setItem(4, kits);
 		p.getInventory().setItem(3, warps);

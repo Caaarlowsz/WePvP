@@ -11,18 +11,18 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class Head implements Listener, CommandExecutor {
 
-	public Head(final Main plugin) {
+	public Head(final WePvP plugin) {
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command command, final String cmd, final String[] args) {
 		final Player p = (Player) sender;
 		if (cmd.equalsIgnoreCase("head") && p.isOp()) {
 			if (args.length == 0) {
-				p.sendMessage(ChatColor.RED + "/head <§cjogador§7>");
+				p.sendMessage(ChatColor.RED + "/head <ï¿½cjogadorï¿½7>");
 				return true;
 			}
 			final ItemStack s = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);

@@ -24,13 +24,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Skeleton implements Listener, CommandExecutor {
-	private Main plugin;
+	private WePvP plugin;
 
-	public Skeleton(final Main instance) {
+	public Skeleton(final WePvP instance) {
 		this.plugin = instance;
 	}
 
@@ -354,25 +354,25 @@ public class Skeleton implements Listener, CommandExecutor {
 		p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 		final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta espadameta = espada.getItemMeta();
-		espadameta.setDisplayName("§cSword");
+		espadameta.setDisplayName("ï¿½cSword");
 		espada.addEnchantment(Enchantment.DURABILITY, 3);
 		p.getInventory().addItem(new ItemStack[] { espada });
 		final ItemStack skeleton = new ItemStack(Material.BONE);
 		final ItemMeta skeletonv = skeleton.getItemMeta();
-		skeletonv.setDisplayName("§6§oSkeleton");
+		skeletonv.setDisplayName("ï¿½6ï¿½oSkeleton");
 		skeleton.setItemMeta(skeletonv);
 		if (cmd.equalsIgnoreCase("skeleton")) {
 			if (KitManager.usandokit.contains(p.getName())) {
-				BarAPI.setMessage(p, "§cVoce ja esta usando um kit!", 5);
+				BarAPI.setMessage(p, "ï¿½cVoce ja esta usando um kit!", 5);
 				return true;
 			}
 			if (!p.hasPermission("kit.skeleton")) {
-				BarAPI.setMessage(p, "§c§oSem Permiss\u00e3o!", 10);
+				BarAPI.setMessage(p, "ï¿½cï¿½oSem Permiss\u00e3o!", 10);
 				return true;
 			}
 			KitManager.usandokit.add(p.getName());
-			p.sendMessage("§7Voce escolheu » §cSkeleton");
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lSkeleton", 10);
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cSkeleton");
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lSkeleton", 10);
 			p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().setArmorContents((ItemStack[]) null);

@@ -25,13 +25,13 @@ import org.bukkit.util.BlockIterator;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Scorpion implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Scorpion(final Main main) {
+	public Scorpion(final WePvP main) {
 		Scorpion.plugin = main;
 	}
 
@@ -39,22 +39,22 @@ public class Scorpion implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("scorpion")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.scorpion")) {
-				p.sendMessage("§7Voce escolheu » §cScorpion");
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lScorpion", 10);
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cScorpion");
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lScorpion", 10);
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.scorpionarrow.add(sender.getName());
 				p.getInventory().clear();
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cEspada");
+				espadameta.setDisplayName("ï¿½cEspada");
 				espada.setItemMeta(espadameta);
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				p.getInventory().addItem(new ItemStack[] { espada });
 				final ItemStack bow = new ItemStack(Material.ARROW);
 				final ItemMeta bowmeta = bow.getItemMeta();
-				bowmeta.setDisplayName("§6Scorpion");
+				bowmeta.setDisplayName("ï¿½6Scorpion");
 				bow.setAmount(1);
 				bow.setItemMeta(bowmeta);
 				p.getInventory().addItem(new ItemStack[] { bow });
@@ -79,7 +79,7 @@ public class Scorpion implements Listener, CommandExecutor {
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(5);
 			velo1.add(new Vector(Math.random() * 0.0 + 0.0, 0.0, 0.0));
 			if (KitManager.reload.contains(p.getName())) {
-				p.sendMessage(ChatColor.GOLD + "§cKit em cooldown!");
+				p.sendMessage(ChatColor.GOLD + "ï¿½cKit em cooldown!");
 			} else {
 				p.playSound(p.getLocation(), Sound.EXPLODE, 1.0f, 1.0f);
 				p.playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 7);
@@ -90,7 +90,7 @@ public class Scorpion implements Listener, CommandExecutor {
 				p.playEffect(p.getLocation(), Effect.SMOKE, 7);
 				p.playEffect(p.getLocation(), Effect.SMOKE, 7);
 				p.playEffect(p.getLocation(), Effect.SMOKE, 7);
-				p.sendMessage("§cGet Over HERE!");
+				p.sendMessage("ï¿½cGet Over HERE!");
 				((Arrow) p.launchProjectile(Arrow.class)).setVelocity(velo1);
 				final Location location = p.getEyeLocation();
 				final BlockIterator blocksToAdd = new BlockIterator(location, 0.0, 50);
@@ -105,7 +105,7 @@ public class Scorpion implements Listener, CommandExecutor {
 								@Override
 								public void run() {
 									if (KitManager.scorpionarrow.contains(p.getName())) {
-										p.sendMessage("§aVoc\u00ea ja pode usar seu kit!");
+										p.sendMessage("ï¿½aVoc\u00ea ja pode usar seu kit!");
 										KitManager.reload.remove(p.getName());
 									}
 								}

@@ -15,17 +15,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class Esmeralda implements Listener {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static ArrayList<String> Esmeralda;
 
 	static {
 		me.dkits.Jumps.Esmeralda.Esmeralda = new ArrayList<String>();
 	}
 
-	public Esmeralda(final Main main) {
+	public Esmeralda(final WePvP main) {
 		me.dkits.Jumps.Esmeralda.plugin = main;
 	}
 

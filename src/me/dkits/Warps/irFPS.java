@@ -14,13 +14,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class irFPS implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public irFPS(final Main main) {
+	public irFPS(final WePvP main) {
 		irFPS.plugin = main;
 	}
 
@@ -37,7 +37,7 @@ public class irFPS implements Listener, CommandExecutor {
 			lobby.setYaw((float) irFPS.plugin.getConfig().getDouble("fps.yaw"));
 			p.getInventory().clear();
 			p.setHealthScale(1.0);
-			p.sendMessage("§7Teleportando em 5 segundos! ");
+			p.sendMessage("ï¿½7Teleportando em 5 segundos! ");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) irFPS.plugin, (Runnable) new Runnable() {
@@ -55,7 +55,7 @@ public class irFPS implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage("§7Teleportado!");
+					p.sendMessage("ï¿½7Teleportado!");
 					KitManager.removeAbility(p);
 					KitManager.usandokit.add(p.getName());
 					p.getInventory().setBoots((ItemStack) null);

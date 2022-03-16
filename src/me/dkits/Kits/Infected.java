@@ -16,13 +16,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Infected implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Infected(final Main main) {
+	public Infected(final WePvP main) {
 		Infected.plugin = main;
 	}
 
@@ -30,15 +30,15 @@ public class Infected implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("infected")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.infected")) {
-				p.sendMessage("§7Voce escolheu » §cInfected");
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lInfected", 10);
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cInfected");
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lInfected", 10);
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.infected.add(sender.getName());
 				p.getInventory().clear();
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cSword");
+				espadameta.setDisplayName("ï¿½cSword");
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().addItem(new ItemStack[] { espada });

@@ -16,17 +16,17 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Avatar implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	ArrayList<Snowball> Soltou;
 	public int id1;
 	ArrayList<Snowball> Soltou1;
 	public int id11;
 
-	public Avatar(final Main main) {
+	public Avatar(final WePvP main) {
 		this.Soltou = new ArrayList<Snowball>();
 		this.Soltou1 = new ArrayList<Snowball>();
 		Avatar.plugin = main;
@@ -37,7 +37,7 @@ public class Avatar implements Listener, CommandExecutor {
 		if (cmd.equalsIgnoreCase("avatar")) {
 			if (KitManager.usandokit.contains(p.getName())) {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-						Avatar.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+						Avatar.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				return true;
 			}
 			if (!p.hasPermission("kit.avatar")) {
@@ -46,7 +46,7 @@ public class Avatar implements Listener, CommandExecutor {
 				return true;
 			}
 			KitManager.usandokit.add(p.getName());
-			p.sendMessage("§7Voce escolheu » §cAvatar");
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cAvatar");
 			KitManager.avatar.add(p.getName());
 			KitManager.Red2.add(p.getName());
 			KitManager.Ferro2.add(p.getName());
@@ -54,19 +54,19 @@ public class Avatar implements Listener, CommandExecutor {
 			KitManager.Terra2.add(p.getName());
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().clear();
-			p.sendMessage("§7Voce escolheu » §cAvatar");
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cAvatar");
 			p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 			final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 			final ItemMeta espadameta = espada.getItemMeta();
-			espadameta.setDisplayName("§cSword");
+			espadameta.setDisplayName("ï¿½cSword");
 			espada.addEnchantment(Enchantment.DURABILITY, 3);
 			p.getInventory().addItem(new ItemStack[] { espada });
 			final ItemStack jumper = new ItemStack(Material.BEACON);
 			final ItemMeta im = jumper.getItemMeta();
-			im.setDisplayName(ChatColor.GREEN + "Avatar - §bElementos");
+			im.setDisplayName(ChatColor.GREEN + "Avatar - ï¿½bElementos");
 			jumper.setItemMeta(im);
 			p.getInventory().addItem(new ItemStack[] { jumper });
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lAvatar", 10);
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lAvatar", 10);
 			KitManager.giveA(p);
 			KitManager.giveSoup(p, 34);
 		}

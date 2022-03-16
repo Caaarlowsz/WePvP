@@ -15,14 +15,14 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 import me.dkits.Scoreboard.ScoreBoard;
 
 public class irSpawn implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public irSpawn(final Main main) {
+	public irSpawn(final WePvP main) {
 		irSpawn.plugin = main;
 	}
 
@@ -37,7 +37,7 @@ public class irSpawn implements Listener, CommandExecutor {
 			p.getInventory().setHelmet((ItemStack) null);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
-			p.sendMessage("§b -> Voce sera teleportado em 5 segundos <-");
+			p.sendMessage("ï¿½b -> Voce sera teleportado em 5 segundos <-");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) irSpawn.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -63,17 +63,17 @@ public class irSpawn implements Listener, CommandExecutor {
 					p.getInventory().clear();
 					final ItemStack glasss = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 					final ItemMeta glasssv = glasss.getItemMeta();
-					glasssv.setDisplayName("§7«");
+					glasssv.setDisplayName("ï¿½7ï¿½");
 					glasss.setItemMeta(glasssv);
 					final ItemStack glass = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15);
 					final ItemMeta glassv = glass.getItemMeta();
-					glassv.setDisplayName("§7»");
+					glassv.setDisplayName("ï¿½7ï¿½");
 					glass.setItemMeta(glassv);
-					final ItemStack vidro1 = KitManager.addItemName("§c«", Material.THIN_GLASS);
-					final ItemStack vidro2 = KitManager.addItemName("§c»", Material.THIN_GLASS);
-					final ItemStack kits = KitManager.addItemName("§6»§7Kits", Material.CHEST);
-					final ItemStack loja = KitManager.addItemName("§6»§bShop Kits", Material.DIAMOND);
-					final ItemStack warps = KitManager.addItemName("§6»§7Warps", Material.MAP);
+					final ItemStack vidro1 = KitManager.addItemName("ï¿½cï¿½", Material.THIN_GLASS);
+					final ItemStack vidro2 = KitManager.addItemName("ï¿½cï¿½", Material.THIN_GLASS);
+					final ItemStack kits = KitManager.addItemName("ï¿½6ï¿½ï¿½7Kits", Material.CHEST);
+					final ItemStack loja = KitManager.addItemName("ï¿½6ï¿½ï¿½bShop Kits", Material.DIAMOND);
+					final ItemStack warps = KitManager.addItemName("ï¿½6ï¿½ï¿½7Warps", Material.MAP);
 					KitManager.removeAbility(p);
 					p.getInventory().setItem(0, glass);
 					p.getInventory().setItem(1, glass);

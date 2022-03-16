@@ -18,14 +18,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Vacuum implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public long cooldownLenght;
 
-	public Vacuum(final Main main) {
+	public Vacuum(final WePvP main) {
 		this.cooldownLenght = 0L;
 		Vacuum.plugin = main;
 	}
@@ -40,7 +40,7 @@ public class Vacuum implements Listener, CommandExecutor {
 					return;
 				}
 				if (this.hasCooldown3()) {
-					p.sendMessage("§cFaltam " + this.cooldownTimeRemaining3() + " para o cooldown acabar!");
+					p.sendMessage("ï¿½cFaltam " + this.cooldownTimeRemaining3() + " para o cooldown acabar!");
 					return;
 				}
 				final Location lc = targetplayer.getLocation();
@@ -56,7 +56,7 @@ public class Vacuum implements Listener, CommandExecutor {
 				v.setY(v_y);
 				v.setZ(v_z);
 				targetplayer.setVelocity(v);
-				p.sendMessage("§6§lVoce puxou esta puxando!");
+				p.sendMessage("ï¿½6ï¿½lVoce puxou esta puxando!");
 				this.addCooldown3(p, 10);
 			}
 		}
@@ -83,25 +83,25 @@ public class Vacuum implements Listener, CommandExecutor {
 		p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 		final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta espadameta = espada.getItemMeta();
-		espadameta.setDisplayName("§cSword");
+		espadameta.setDisplayName("ï¿½cSword");
 		espada.addEnchantment(Enchantment.DURABILITY, 3);
 		p.getInventory().addItem(new ItemStack[] { espada });
 		final ItemStack puxador = new ItemStack(Material.EYE_OF_ENDER);
 		final ItemMeta puxadora = puxador.getItemMeta();
-		puxadora.setDisplayName("§aPuxador");
+		puxadora.setDisplayName("ï¿½aPuxador");
 		puxador.setItemMeta(puxadora);
 		if (cmd.equalsIgnoreCase("vacuum")) {
 			if (KitManager.usandokit.contains(p.getName())) {
-				BarAPI.setMessage(p, "§cVoc\u00ea ja est\u00e1 usando um kit!", 5);
+				BarAPI.setMessage(p, "ï¿½cVoc\u00ea ja est\u00e1 usando um kit!", 5);
 				return true;
 			}
 			if (!p.hasPermission("kit.vacuum")) {
-				BarAPI.setMessage(p, "§c§oSem Permiss\u00e3o!!", 10);
+				BarAPI.setMessage(p, "ï¿½cï¿½oSem Permiss\u00e3o!!", 10);
 				return true;
 			}
 			KitManager.usandokit.add(p.getName());
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lVacuum", 10);
-			p.sendMessage("§7Voce escolheu » §cVacuum");
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lVacuum", 10);
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cVacuum");
 			p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().setArmorContents((ItemStack[]) null);

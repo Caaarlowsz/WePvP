@@ -14,13 +14,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Wolverine implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Wolverine(final Main main) {
+	public Wolverine(final WePvP main) {
 		Wolverine.plugin = main;
 	}
 
@@ -28,8 +28,8 @@ public class Wolverine implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("wolverine")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.wolverine")) {
-				p.sendMessage("§7Voce escolheu » §cWolverine");
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lWolverine", 10);
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cWolverine");
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lWolverine", 10);
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.wolverine.add(sender.getName());
@@ -37,7 +37,7 @@ public class Wolverine implements Listener, CommandExecutor {
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cEspada");
+				espadameta.setDisplayName("ï¿½cEspada");
 				espada.setItemMeta(espadameta);
 				KitManager.giveA(p);
 				espada.addEnchantment(Enchantment.DURABILITY, 3);

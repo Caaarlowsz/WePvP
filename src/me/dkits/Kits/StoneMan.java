@@ -17,13 +17,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class StoneMan implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public StoneMan(final Main main) {
+	public StoneMan(final WePvP main) {
 		StoneMan.plugin = main;
 	}
 
@@ -31,15 +31,15 @@ public class StoneMan implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("stoneman")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.stoneman")) {
-				p.sendMessage("§7Voce escolheu » §cStoneman");
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lStoneMan", 10);
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cStoneman");
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lStoneMan", 10);
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.stoneman.add(sender.getName());
 				p.getInventory().clear();
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cEspada");
+				espadameta.setDisplayName("ï¿½cEspada");
 				espada.setItemMeta(espadameta);
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));

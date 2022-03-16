@@ -29,18 +29,18 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.BlockIterator;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Bazooka implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 
 	static {
 		Bazooka.cooldown = new HashMap<String, Long>();
 	}
 
-	public Bazooka(final Main main) {
+	public Bazooka(final WePvP main) {
 		Bazooka.plugin = main;
 	}
 
@@ -48,7 +48,7 @@ public class Bazooka implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("bazooka")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.bazooka")) {
-				p.sendMessage("§7Voce escolheu » §cBazooka");
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cBazooka");
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.bazooka.add(sender.getName());
@@ -56,16 +56,16 @@ public class Bazooka implements Listener, CommandExecutor {
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cEspada");
+				espadameta.setDisplayName("ï¿½cEspada");
 				espada.setItemMeta(espadameta);
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().addItem(new ItemStack[] { espada });
 				final ItemStack bazooka = new ItemStack(Material.GOLD_BARDING);
 				final ItemMeta bazookameta = bazooka.getItemMeta();
-				bazookameta.setDisplayName("§cBazooka");
+				bazookameta.setDisplayName("ï¿½cBazooka");
 				bazooka.setItemMeta(bazookameta);
 				p.getInventory().addItem(new ItemStack[] { bazooka });
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lBazooka", 10);
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lBazooka", 10);
 				KitManager.giveSoup(p, 34);
 			}
 			return true;

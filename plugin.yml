@@ -1,7 +1,7 @@
 name: DKits
 author: DevilGamer_ | BrunoDEV | Kits Edit
 description: Plugin de KitPvP
-main: me.dkits.Main
+main: com.github.caaarlowsz.wemc.kitpvp.Main
 version: 1.0
 commands:
   build:

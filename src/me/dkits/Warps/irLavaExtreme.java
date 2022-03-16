@@ -14,13 +14,13 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class irLavaExtreme implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public irLavaExtreme(final Main main) {
+	public irLavaExtreme(final WePvP main) {
 		irLavaExtreme.plugin = main;
 	}
 
@@ -39,7 +39,7 @@ public class irLavaExtreme implements Listener, CommandExecutor {
 			p.getInventory().clear();
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
-			p.sendMessage("§7Teleportando em 5 segundos! ");
+			p.sendMessage("ï¿½7Teleportando em 5 segundos! ");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) irLavaExtreme.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -52,7 +52,7 @@ public class irLavaExtreme implements Listener, CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage("§7Teleportado!");
+					p.sendMessage("ï¿½7Teleportado!");
 					KitManager.removeAbility(p);
 					KitManager.usandokit.add(p.getName());
 					p.getInventory().setBoots((ItemStack) null);

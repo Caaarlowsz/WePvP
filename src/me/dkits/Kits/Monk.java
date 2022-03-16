@@ -19,11 +19,11 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Monk implements Listener, CommandExecutor {
-	private Main plugin;
+	private WePvP plugin;
 	public int cooldown;
 	public String monkCooldownMessage;
 	public String monkedMessage;
@@ -32,7 +32,7 @@ public class Monk implements Listener, CommandExecutor {
 	private transient HashMap<ItemStack, Long> monkStaff;
 	public boolean sendThroughInventory;
 
-	public Monk(final Main instance) {
+	public Monk(final WePvP instance) {
 		this.cooldown = 15;
 		this.monkCooldownMessage = ChatColor.BLUE + "Voce so pode usar depois de %s segundos!";
 		this.monkedMessage = ChatColor.GREEN + "Monkado!";
@@ -48,7 +48,7 @@ public class Monk implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("monk")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.monk")) {
-					p.sendMessage("§7Voce escolheu » §cMonk");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cMonk");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.monk.add(sender.getName());
@@ -56,20 +56,20 @@ public class Monk implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
 					final ItemStack bow = new ItemStack(Material.BLAZE_ROD);
 					final ItemMeta bowmeta = bow.getItemMeta();
-					bowmeta.setDisplayName("§6Monk");
+					bowmeta.setDisplayName("ï¿½6Monk");
 					bow.setItemMeta(bowmeta);
 					p.getInventory().addItem(new ItemStack[] { bow });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lMonk", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lMonk", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 34);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							this.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							this.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',

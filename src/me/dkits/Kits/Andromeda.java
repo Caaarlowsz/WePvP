@@ -31,18 +31,18 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.BlockIterator;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Andromeda implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 
 	static {
 		Andromeda.cooldown = new HashMap<String, Long>();
 	}
 
-	public Andromeda(final Main main) {
+	public Andromeda(final WePvP main) {
 		Andromeda.plugin = main;
 	}
 
@@ -50,7 +50,7 @@ public class Andromeda implements Listener, CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("andromeda")) {
 			if (!KitManager.usandokit.contains(p.getName()) && p.hasPermission("kit.andromeda")) {
-				p.sendMessage("§7Voce escolheu » §cAndromeda");
+				p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cAndromeda");
 				p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 				KitManager.usandokit.add(p.getName());
 				KitManager.andromedaflor.add(sender.getName());
@@ -58,16 +58,16 @@ public class Andromeda implements Listener, CommandExecutor {
 				p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 				final ItemMeta espadameta = espada.getItemMeta();
-				espadameta.setDisplayName("§cEspada");
+				espadameta.setDisplayName("ï¿½cEspada");
 				espada.setItemMeta(espadameta);
 				espada.addEnchantment(Enchantment.DURABILITY, 3);
 				p.getInventory().addItem(new ItemStack[] { espada });
 				final ItemStack rosa = new ItemStack(Material.RED_ROSE);
 				final ItemMeta rosameta = rosa.getItemMeta();
-				rosameta.setDisplayName("§cRosa da Maldade");
+				rosameta.setDisplayName("ï¿½cRosa da Maldade");
 				rosa.setItemMeta(rosameta);
 				p.getInventory().addItem(new ItemStack[] { rosa });
-				BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lAndromeda", 10);
+				BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lAndromeda", 10);
 				KitManager.giveSoup(p, 34);
 			}
 			return true;
@@ -89,7 +89,7 @@ public class Andromeda implements Listener, CommandExecutor {
 				p.getWorld().playEffect(blockToAdd, Effect.STEP_SOUND, (Object) Material.REDSTONE_BLOCK, 20);
 				p.playSound(blockToAdd, Sound.WITHER_SHOOT, 3.0f, 3.0f);
 				p.getWorld().playEffect(blockToAdd, Effect.COLOURED_DUST, 50);
-				p.sendMessage("§cA Flor que ir\u00e1 decidir o destino foi lan\u00e7ada!");
+				p.sendMessage("ï¿½cA Flor que ir\u00e1 decidir o destino foi lan\u00e7ada!");
 				final Snowball h = (Snowball) p.launchProjectile(Snowball.class);
 				h.setMetadata("andromeda",
 						(MetadataValue) new FixedMetadataValue((Plugin) Andromeda.plugin, (Object) true));
@@ -126,7 +126,7 @@ public class Andromeda implements Listener, CommandExecutor {
 			p.getLocation().distance(event.getEntity().getLocation());
 			if (event.getEntity() instanceof Player && KitManager.sniper.contains(p.getName())) {
 				p.playSound(p.getLocation(), Sound.WITHER_SHOOT, 1.0f, 1.0f);
-				p.sendMessage("§cVoc\u00ea foi acertado pela flecha do destino!");
+				p.sendMessage("ï¿½cVoc\u00ea foi acertado pela flecha do destino!");
 				p.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 300, 0));
 				event.setDamage(15.0);
 			}

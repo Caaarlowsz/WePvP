@@ -17,7 +17,7 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class ScoreBoard implements Listener {
 	private static FileConfiguration config;
@@ -42,27 +42,27 @@ public class ScoreBoard implements Listener {
 
 	public static void setScoreBoard(final Player p) {
 		final Scoreboard score = Bukkit.getScoreboardManager().getNewScoreboard();
-		final Objective o = score.registerNewObjective("§bWePvP", "");
+		final Objective o = score.registerNewObjective("ï¿½bWePvP", "");
 		o.setDisplaySlot(DisplaySlot.SIDEBAR);
-		Bukkit.getServer().getScheduler().runTaskTimer(Main.getPlugin(), (Runnable) new Runnable() {
+		Bukkit.getServer().getScheduler().runTaskTimer(WePvP.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 			}
 		}, 10L, 10L);
-		final Score nick = o.getScore(Bukkit.getOfflinePlayer("§cNick: §7"));
-		final Score nickr = o.getScore(Bukkit.getOfflinePlayer("§7" + p.getName()));
-		final Score espaco3 = o.getScore(Bukkit.getOfflinePlayer("§a"));
-		final Score kills = o.getScore(Bukkit.getOfflinePlayer("§cMatou: §7"));
-		final Score killsr = o.getScore(Bukkit.getOfflinePlayer("§c> §7" + getKills(p)));
-		final Score espaco4 = o.getScore(Bukkit.getOfflinePlayer("§b"));
-		final Score deaths = o.getScore(Bukkit.getOfflinePlayer("§cMorreu: §7"));
-		final Score deathsr = o.getScore(Bukkit.getOfflinePlayer("§c> §7" + getDeaths(p)));
-		final Score espaco5 = o.getScore(Bukkit.getOfflinePlayer("§c"));
-		final Score ks = o.getScore(Bukkit.getOfflinePlayer("§cKillstreak: §7"));
-		final Score ksr = o.getScore(Bukkit.getOfflinePlayer("§c> §7" + getKillStreak(p)));
-		final Score espaco6 = o.getScore(Bukkit.getOfflinePlayer("§e"));
-		final Score money = o.getScore(Bukkit.getOfflinePlayer("§cCr\u00e9ditos: §7"));
-		final Score moneyr = o.getScore(Bukkit.getOfflinePlayer("§c> §7" + Main.econ.getBalance(p.getName())));
+		final Score nick = o.getScore(Bukkit.getOfflinePlayer("ï¿½cNick: ï¿½7"));
+		final Score nickr = o.getScore(Bukkit.getOfflinePlayer("ï¿½7" + p.getName()));
+		final Score espaco3 = o.getScore(Bukkit.getOfflinePlayer("ï¿½a"));
+		final Score kills = o.getScore(Bukkit.getOfflinePlayer("ï¿½cMatou: ï¿½7"));
+		final Score killsr = o.getScore(Bukkit.getOfflinePlayer("ï¿½c> ï¿½7" + getKills(p)));
+		final Score espaco4 = o.getScore(Bukkit.getOfflinePlayer("ï¿½b"));
+		final Score deaths = o.getScore(Bukkit.getOfflinePlayer("ï¿½cMorreu: ï¿½7"));
+		final Score deathsr = o.getScore(Bukkit.getOfflinePlayer("ï¿½c> ï¿½7" + getDeaths(p)));
+		final Score espaco5 = o.getScore(Bukkit.getOfflinePlayer("ï¿½c"));
+		final Score ks = o.getScore(Bukkit.getOfflinePlayer("ï¿½cKillstreak: ï¿½7"));
+		final Score ksr = o.getScore(Bukkit.getOfflinePlayer("ï¿½c> ï¿½7" + getKillStreak(p)));
+		final Score espaco6 = o.getScore(Bukkit.getOfflinePlayer("ï¿½e"));
+		final Score money = o.getScore(Bukkit.getOfflinePlayer("ï¿½cCr\u00e9ditos: ï¿½7"));
+		final Score moneyr = o.getScore(Bukkit.getOfflinePlayer("ï¿½c> ï¿½7" + WePvP.econ.getBalance(p.getName())));
 		nick.setScore(14);
 		nickr.setScore(13);
 		espaco3.setScore(12);

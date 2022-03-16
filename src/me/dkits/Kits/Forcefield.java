@@ -26,7 +26,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Forcefield implements Listener, CommandExecutor {
@@ -42,7 +42,7 @@ public class Forcefield implements Listener, CommandExecutor {
 		if (cmd.equalsIgnoreCase("Forcefield")) {
 			if (KitManager.usandokit.contains(p.getName())) {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-						Forcefield.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+						Forcefield.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				return true;
 			}
 			if (!p.hasPermission("kit.Forcefield")) {
@@ -52,7 +52,7 @@ public class Forcefield implements Listener, CommandExecutor {
 			}
 			KitManager.usandokit.add(p.getName());
 			KitManager.forcefield.add(p.getName());
-			p.sendMessage("§7Voce escolheu » §cForcefield");
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cForcefield");
 			p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 			p.setGameMode(GameMode.ADVENTURE);
 			p.getInventory().setArmorContents((ItemStack[]) null);
@@ -60,7 +60,7 @@ public class Forcefield implements Listener, CommandExecutor {
 			p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 			final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 			final ItemMeta espadameta = espada.getItemMeta();
-			espadameta.setDisplayName("§cSword");
+			espadameta.setDisplayName("ï¿½cSword");
 			espada.addEnchantment(Enchantment.DURABILITY, 3);
 			p.getInventory().addItem(new ItemStack[] { espada });
 			final ItemStack jumper = new ItemStack(Material.NETHER_FENCE);
@@ -68,7 +68,7 @@ public class Forcefield implements Listener, CommandExecutor {
 			im.setDisplayName(ChatColor.RED + "Forcefield");
 			jumper.setItemMeta(im);
 			p.getInventory().addItem(new ItemStack[] { jumper });
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lForcefield", 10);
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lForcefield", 10);
 			KitManager.giveA(p);
 			KitManager.giveSoup(p, 34);
 		}
@@ -87,30 +87,30 @@ public class Forcefield implements Listener, CommandExecutor {
 					event.setCancelled(true);
 				}
 				if (Forcefield.cooldownm.contains(p)) {
-					p.sendMessage("§cAguarde o cooldown acabar!");
+					p.sendMessage("ï¿½cAguarde o cooldown acabar!");
 					return;
 				}
 				final Location loc = p.getLocation();
 				p.getWorld().playSound(loc, Sound.MAGMACUBE_WALK2, 5.0f, -5.0f);
 				Forcefield.cooldownm.add(p);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(WePvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						KitManager.forcefielddano.add(p.getName());
-						p.sendMessage("§cVoce Ativou O FF");
+						p.sendMessage("ï¿½cVoce Ativou O FF");
 					}
 				}, 0L);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(WePvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						KitManager.forcefielddano.remove(p.getName());
 					}
 				}, 300L);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(WePvP.plugin, (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Forcefield.cooldownm.remove(p);
-						p.sendMessage("§BVoce pode usar novamente!");
+						p.sendMessage("ï¿½BVoce pode usar novamente!");
 						p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 					}
 				}, 1000L);
@@ -129,8 +129,8 @@ public class Forcefield implements Listener, CommandExecutor {
 					final Player perto = (Player) pertos;
 					((Player) pertos).damage(3.0);
 					pertos.setVelocity(new Vector(0.1, 0.0, 0.1));
-					BarAPI.setMessage(perto, String.valueOf(p.getDisplayName()) + " §bForceField");
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					BarAPI.setMessage(perto, String.valueOf(p.getDisplayName()) + " ï¿½bForceField");
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(WePvP.plugin, (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							BarAPI.removeBar(perto);

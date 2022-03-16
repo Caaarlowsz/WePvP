@@ -21,11 +21,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Stomper implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 	public static List<Player> cooldownm;
 
@@ -34,7 +34,7 @@ public class Stomper implements Listener, CommandExecutor {
 		Stomper.cooldownm = new ArrayList<Player>();
 	}
 
-	public Stomper(final Main main) {
+	public Stomper(final WePvP main) {
 		Stomper.plugin = main;
 	}
 
@@ -43,7 +43,7 @@ public class Stomper implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("stomper")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.stomper")) {
-					p.sendMessage("§7Voce escolheu » §cStomper");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cStomper");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.stomper.add(sender.getName());
@@ -51,10 +51,10 @@ public class Stomper implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lStomper", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lStomper", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 35);
 				} else {

@@ -9,18 +9,18 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class mlgvoltar implements Listener {
 
-	public mlgvoltar(final Main instance) {
+	public mlgvoltar(final WePvP instance) {
 	}
 
 	@EventHandler
 	public void onSignChange(final SignChangeEvent e) {
 		if (e.getLine(0).equalsIgnoreCase("mlg")) {
-			e.setLine(0, "§4§o<---()--->");
-			e.setLine(1, "§6VOLTAR!");
+			e.setLine(0, "ï¿½4ï¿½o<---()--->");
+			e.setLine(1, "ï¿½6VOLTAR!");
 		}
 	}
 
@@ -32,8 +32,8 @@ public class mlgvoltar implements Listener {
 						|| e.getClickedBlock().getType() == Material.SIGN_POST)) {
 			final Sign s = (Sign) e.getClickedBlock().getState();
 			final String[] lines = s.getLines();
-			if (lines.length > 2 && lines[1].equals("§6VOLTAR!") && lines.length > 1
-					&& lines[0].equals("§4§o<---()--->")) {
+			if (lines.length > 2 && lines[1].equals("ï¿½6VOLTAR!") && lines.length > 1
+					&& lines[0].equals("ï¿½4ï¿½o<---()--->")) {
 				p.chat("/mlg");
 			}
 		}
@@ -46,7 +46,7 @@ public class mlgvoltar implements Listener {
 				&& (e.getClickedBlock().getType() == Material.WATER
 						|| e.getClickedBlock().getType() == Material.WATER)) {
 			p.sendMessage(
-					"§bN\u00e3o deixe sua \u00e1gua no ch\u00e3o, isso \u00e9 um bug e caso seja pego o fazendo, levar\u00e1 tempban! §fBom Jogo");
+					"ï¿½bN\u00e3o deixe sua \u00e1gua no ch\u00e3o, isso \u00e9 um bug e caso seja pego o fazendo, levar\u00e1 tempban! ï¿½fBom Jogo");
 		}
 	}
 }

@@ -1,5 +1,6 @@
 package me.dkits.Utils;
 
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -11,10 +12,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
-import me.dkits.Main;
-
-public class Prote\u00e7\u00e3o implements Listener {
-	public static Main noSpawnPvp;
+public class Proteção implements Listener {
+	public static WePvP noSpawnPvp;
 
 	@EventHandler(priority = EventPriority.LOW)
 	public void onEntityDamageByEntityEvent(final EntityDamageByEntityEvent event) {

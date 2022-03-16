@@ -28,18 +28,18 @@ import org.bukkit.util.BlockIterator;
 import org.bukkit.util.Vector;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Ryu implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static HashMap<String, Long> cooldown;
 
 	static {
 		Ryu.cooldown = new HashMap<String, Long>();
 	}
 
-	public Ryu(final Main main) {
+	public Ryu(final WePvP main) {
 		Ryu.plugin = main;
 	}
 
@@ -62,7 +62,7 @@ public class Ryu implements Listener, CommandExecutor {
 				final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 				h.setVelocity(velo1);
 				h.setMetadata("hadouken", (MetadataValue) new FixedMetadataValue((Plugin) Ryu.plugin, (Object) true));
-				p.sendMessage("§bHADOUKEN!");
+				p.sendMessage("ï¿½bHADOUKEN!");
 				Ryu.cooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(20L));
 				return;
 			}
@@ -77,24 +77,24 @@ public class Ryu implements Listener, CommandExecutor {
 		final ItemStack dima = new ItemStack(Material.STONE_SWORD);
 		dima.addEnchantment(Enchantment.DURABILITY, 3);
 		final ItemMeta souperaa = dima.getItemMeta();
-		souperaa.setDisplayName("§cEspada");
+		souperaa.setDisplayName("ï¿½cEspada");
 		dima.setItemMeta(souperaa);
 		final ItemStack especial = new ItemStack(Material.ICE);
 		final ItemMeta especial2 = especial.getItemMeta();
-		especial2.setDisplayName("§bHadouken");
+		especial2.setDisplayName("ï¿½bHadouken");
 		especial.setItemMeta(especial2);
 		if (cmd.equalsIgnoreCase("ryu")) {
 			if (KitManager.usandokit.contains(p.getName())) {
-				p.sendMessage("§cVoce ja esta usando um kit");
+				p.sendMessage("ï¿½cVoce ja esta usando um kit");
 				return true;
 			}
 			if (!p.hasPermission("kit.ryu")) {
-				p.sendMessage("§cVoce nao tem permissao para usar este kit!");
+				p.sendMessage("ï¿½cVoce nao tem permissao para usar este kit!");
 				return true;
 			}
 			KitManager.usandokit.add(p.getName());
-			p.sendMessage("§7Voce escolheu » §cRyu");
-			BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lRyu", 10);
+			p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cRyu");
+			BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lRyu", 10);
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().clear();
 			p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));

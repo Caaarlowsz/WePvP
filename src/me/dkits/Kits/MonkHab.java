@@ -12,7 +12,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class MonkHab implements Listener {
@@ -24,7 +24,7 @@ public class MonkHab implements Listener {
 	private transient HashMap<ItemStack, Long> monkStaff;
 	public boolean sendThroughInventory;
 
-	public MonkHab(final Main instance) {
+	public MonkHab(final WePvP instance) {
 		this.cooldown = 15;
 		this.monkCooldownMessage = ChatColor.BLUE + "Voce so pode usa depois de %s segundos!";
 		this.monkedMessage = ChatColor.GREEN + "Monkado!";

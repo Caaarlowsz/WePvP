@@ -15,17 +15,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 
 public class Ferro implements Listener {
-	public static Main plugin;
+	public static WePvP plugin;
 	public static ArrayList<String> Ferro;
 
 	static {
 		me.dkits.Jumps.Ferro.Ferro = new ArrayList<String>();
 	}
 
-	public Ferro(final Main main) {
+	public Ferro(final WePvP main) {
 		me.dkits.Jumps.Ferro.plugin = main;
 	}
 

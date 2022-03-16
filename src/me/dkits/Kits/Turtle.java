@@ -17,13 +17,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import me.confuser.barapi.BarAPI;
-import me.dkits.Main;
+import com.github.caaarlowsz.wemc.kitpvp.WePvP;
 import me.dkits.API.KitManager;
 
 public class Turtle implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static WePvP plugin;
 
-	public Turtle(final Main main) {
+	public Turtle(final WePvP main) {
 		Turtle.plugin = main;
 	}
 
@@ -32,7 +32,7 @@ public class Turtle implements Listener, CommandExecutor {
 		if (label.equalsIgnoreCase("turtle")) {
 			if (!KitManager.usandokit.contains(p.getName())) {
 				if (p.hasPermission("kit.turtle")) {
-					p.sendMessage("§7Voce escolheu » §cTurtle");
+					p.sendMessage("ï¿½7Voce escolheu ï¿½ ï¿½cTurtle");
 					p.playSound(p.getLocation(), Sound.NOTE_PLING, 4.0f, 4.0f);
 					KitManager.usandokit.add(p.getName());
 					KitManager.turtle.add(sender.getName());
@@ -40,15 +40,15 @@ public class Turtle implements Listener, CommandExecutor {
 					p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 					final ItemStack espada = new ItemStack(Material.STONE_SWORD);
 					final ItemMeta espadameta = espada.getItemMeta();
-					espadameta.setDisplayName("§cSword");
+					espadameta.setDisplayName("ï¿½cSword");
 					espada.addEnchantment(Enchantment.DURABILITY, 3);
 					p.getInventory().addItem(new ItemStack[] { espada });
-					BarAPI.setMessage(p, "§7§lSeu Kit §6§l- §f§lTurtle", 10);
+					BarAPI.setMessage(p, "ï¿½7ï¿½lSeu Kit ï¿½6ï¿½l- ï¿½fï¿½lTurtle", 10);
 					KitManager.giveA(p);
 					KitManager.giveSoup(p, 35);
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&',
-							Turtle.plugin.getConfig().getString("Sem_Permiss\u00c3£o_Kit")));
+							Turtle.plugin.getConfig().getString("Sem_Permiss\u00c3ï¿½o_Kit")));
 				}
 			} else {
 				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
